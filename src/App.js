@@ -1,9 +1,10 @@
-function App() {
-  return (
-    <div className=" bg-slate-300 text-red-100">
-      <p>Hello world</p>
-    </div>
-  );
-}
+import { BrowserRouter } from 'react-router-dom';
+import AppRoutes from './routes/routes';
+
+const App = () => (
+  <BrowserRouter>
+    <AppRoutes />
+  </BrowserRouter>
+);
 
 export default App;
