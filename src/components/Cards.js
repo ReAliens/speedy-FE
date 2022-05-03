@@ -1,12 +1,12 @@
 import React from 'react';
 
 export default function Cards(prop) {
+  const { image, title, description } = prop;
   return (
     <div>
-      /* eslint-disable react/destructuring-assignment */
-      <img src={prop.image} alt="moto" />
-      <h3>{prop.title}</h3>
-      <p>{prop.description}</p>
+      <img src={image} alt="moto" />
+      <h3>{ title }</h3>
+      <p>{ description }</p>
     </div>
   );
 }

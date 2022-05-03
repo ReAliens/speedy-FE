@@ -8,7 +8,8 @@ export default function Mainpage() {
     <Cards
       key={prop.id}
       image={prop.image}
-
+      title={prop.title}
+      description={prop.description}
     />
   ));
 
