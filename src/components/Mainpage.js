@@ -52,9 +52,9 @@ export default function Mainpage() {
         </div>
       </div>
       <div className="main-page">
-        <h1 className="text-center ...">LATEST MODELS</h1>
+        <h1 className="text-center ... text-2xl ... pt-16">LATEST MODELS</h1>
         <p className="text-center ...">Please select a Vespa Model</p>
-        <div className="moto-image">
+        <div className="grid grid-rows-1 grid-flow-col gap-1 p-10 gap-5">
           {motoList}
         </div>
       </div>
