@@ -1,11 +1,11 @@
 import React from 'react';
 
-export default function MotoDisplay(prop) {
+export default function Cards(prop) {
   return (
     <div>
       <img src={prop.image} alt="moto" />
-      <h3>{prop.name}</h3>
-      <p>{prop.details}</p>
+      <h3>{prop.title}</h3>
+      <p>{prop.description}</p>
     </div>
   );
 }

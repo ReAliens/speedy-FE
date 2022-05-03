@@ -1,8 +1,18 @@
 import React from 'react';
-
 import '../index.css';
+import Data from './Data';
+import Cards from './Cards';
 
 export default function Mainpage() {
+  const motoList = Data.map((prop) => (
+    <Cards
+      key={prop.id}
+      image={prop.image}
+      title={prop.title}
+      description={prop.description}
+    />
+  ));
+
   return (
     <div className="container">
       <div className="menu border-cyan-200 border-r-4 border-indigo-500 ...">
@@ -45,8 +55,7 @@ export default function Mainpage() {
         <h1 className="text-center ...">LATEST MODELS</h1>
         <p className="text-center ...">Please select a Vespa Model</p>
         <div className="moto-image">
-          <img src="./images/moto_cycle.png" alt="moto" className="moto" />
-          <img src="./images/moto2.png" alt="moto" className="moto" />
+          {motoList}
         </div>
       </div>
     </div>
