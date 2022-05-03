@@ -1,11 +1,12 @@
 import React from 'react';
-import Mainpage from './components/Mainpage';
+import { BrowserRouter } from 'react-router-dom';
+import AppRoutes from './routes/routes';
 
 function App() {
   return (
-    <div className="">
-      <Mainpage />
-    </div>
+    <BrowserRouter>
+      <AppRoutes />
+    </BrowserRouter>
   );
 }
 

@@ -1,18 +1,15 @@
 import React from 'react';
 
-export default function Cards(prop) {
-  const { image, title, description } = prop;
-  return (
-    <div className="card">
-      <div className="sub-card grid grid-cols-2 gap-4">
-        <div className="img bg-teal-600 rounded-full ... w-40">
-          <img src={image} alt="moto w-50" />
-        </div>
-        <div className="description">
-          <h3 className="text-center pt-20">{ title }</h3>
-          <p className="text-center">{ description }</p>
-        </div>
-      </div>
+const ItemCard = ({ prop }) => (
+  <div className="grid grid-rows-2 gap-1 m-5">
+    <div className="bg-teal-600 rounded-full w-40 h-40 flex justify-center items-center">
+      <img src={prop.image} className="w-24 h-24 " alt="cover" />
     </div>
-  );
-}
+    <div>
+      <h3 className="text-center pt-20">{prop.title}</h3>
+      <p className="text-center">{prop.description}</p>
+    </div>
+  </div>
+);
+
+export default ItemCard;
