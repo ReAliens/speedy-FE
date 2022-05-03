@@ -20,6 +20,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgba(215, 218, 218, 0.662);
 }
 
 code {
@@ -30,4 +31,33 @@ code {
     Consolas,
     'Courier New',
     monospace;
+}
+
+.title {
+  padding-top: 50px;
+  margin-bottom: 50px;
+}
+
+.icons {
+  display: flex;
+  flex-direction: row;
+  margin-top: 100px;
+  margin-bottom: 20px;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  margin: 20px;
+  background-color: rgba(255, 255, 255, 0.983);
+  
+}
+
+.moto-image {
+  display: flex;
+  flex-direction: row;
+}
+
+.moto {
+  width: 20rem;
 }
