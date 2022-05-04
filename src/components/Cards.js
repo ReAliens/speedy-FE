@@ -10,11 +10,10 @@ const ItemCard = ({ prop }) => (
       <div class="flex-grow border-t border-gray-100 w-28 ml-12 p-5" />
       <p className="text-center text-gray-800">{prop.description}</p>
     </div>
-    <div className="icons flex flex-row justify-around">
+    <div className="icons flex flex-row justify-around h-12">
       <img src="./images/facebook.png" alt="facebook" />
       <img src="./images/google.png" alt="facebook" />
-      <img src="./images/parking.png" alt="facebook" />
-      <img src="./images/scooter.png" alt="facebook" />
+      <img src="./images/twitter.png" alt="facebook" />
     </div>
   </div>
 );
