@@ -31,3 +31,74 @@ code {
     'Courier New',
     monospace;
 }
+
+.car {
+  width: 200px;
+  height: 100px;
+  background: url(../public/Black-Car.svg);
+  left: 140px;
+  position: absolute;
+  background-repeat: no-repeat;
+}
+
+.car:after {
+  content: '';
+  height: 35px;
+  width: 36px;
+  background: url(../public/wheel.svg);
+  position: absolute;
+  top: 40px;
+  left: 14px;
+  animation: rotateWheel 0.7s infinite linear;
+}
+
+.car:before {
+  content: '';
+  height: 35px;
+  width: 36px;
+  background: url(../public/wheel.svg);
+  position: absolute;
+  top: 40px;
+  left: 142px;
+  animation: rotateWheel 0.7s infinite linear;
+}
+
+@keyframes rotateWheel {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.lamp {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 60px;
+  bottom: 98px;
+  left: 303px;
+  transform: rotateZ(269deg);
+  border-bottom: 30px solid transparent;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+
+.lamp:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 10px;
+  height: 18px;
+  top: -163px;
+  left: -134px;
+  border-top: 150px solid transparent;
+  border-bottom: 2180px solid rgba(255, 255, 255, .4);
+  border-left: 160px solid transparent;
+  border-right: 160px solid transparent;
+  z-index: 1;
+  transform: rotateY(61deg);
+}
