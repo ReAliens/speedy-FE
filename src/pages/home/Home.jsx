@@ -1,6 +1,6 @@
 import React from 'react';
 
-const HoPage = () => (
+const Home = () => (
   <div className="h-full w-full bg-orange-200 flex justify-center relative">
     <img src="/car.png" alt="page-cover" className="object-contain" />
     <div className="absolute top-[20%]  text-center">
@@ -15,4 +15,4 @@ const HoPage = () => (
   </div>
 );
 
-export default HoPage;
+export default Home;
