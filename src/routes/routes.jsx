@@ -3,6 +3,7 @@ import { Suspense } from 'react';
 import Reservations from '../pages/reservationsPage/Reservations';
 import Home from '../pages/home/Home';
 import MainPage from '../pages/mainPage/Main';
+import Details from '../components/Details';
 
 const AppRoutes = () => (
   <Suspense>
@@ -10,6 +11,7 @@ const AppRoutes = () => (
       <Route path="/" element={<Home />} />
       <Route path="/main" element={<MainPage />} />
       <Route path="/reservations" element={<Reservations />} />
+      <Route path="/details" element={<Details />} />
     </Routes>
   </Suspense>
 );
