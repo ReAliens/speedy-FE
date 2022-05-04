@@ -1,21 +1,21 @@
 const data = [
   {
     id: 1,
-    image: 'https://i.pinimg.com/originals/76/17/de/7617de84d03e7acf2e2e1c46dde17645.png',
-    title: 'moto1',
-    description: 'vespa node45',
+    image: '../images/car2.png',
+    title: 'AUDI',
+    description: 'Presenting the 2022 U.S. News Best Cars for the Money awards. View the best cars.',
   },
   {
     id: 2,
-    image: 'https://i.pinimg.com/originals/76/17/de/7617de84d03e7acf2e2e1c46dde17645.png',
-    title: 'moto1',
-    description: 'vespa node45',
+    image: '../images/car3.png',
+    title: 'FELARRI',
+    description: 'Presenting the 2022 U.S. News Best Cars for the Money awards. View the best cars.',
   },
   {
-    id: 3,
-    image: 'https://i.pinimg.com/originals/76/17/de/7617de84d03e7acf2e2e1c46dde17645.png',
-    title: 'moto1',
-    description: 'vespa node45',
+    id: 4,
+    image: '../images/car1.png',
+    title: 'CHEVROLIT',
+    description: 'Presenting the 2022 U.S. News Best Cars for the Money awards. View the best cars.',
   },
 ];
 

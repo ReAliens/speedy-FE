@@ -6,7 +6,7 @@ const MainPage = () => {
   console.log('data');
   return (
     <div className="flex flex-col justify-center w-screen h-[90vh]">
-      <h1 className="font-bold text-center w-full">Latest Models </h1>
+      <h1 className="font-bold text-center w-full pt-32">Latest Models </h1>
       <p className="text-center">Please Select your favourite model</p>
       <div className="flex justify-center mt-10">
         {data.map((item) => (
