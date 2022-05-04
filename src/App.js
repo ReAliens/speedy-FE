@@ -2,12 +2,12 @@ import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import AppRoutes from './routes/routes';
 
-function App() {
-  return (
-    <BrowserRouter>
+const App = () => (
+  <BrowserRouter>
+    <div className="h-screen w-screen">
       <AppRoutes />
-    </BrowserRouter>
-  );
-}
+    </div>
+  </BrowserRouter>
+);
 
 export default App;
