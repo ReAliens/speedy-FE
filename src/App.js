@@ -3,7 +3,9 @@ import AppRoutes from './routes/routes';
 
 const App = () => (
   <BrowserRouter>
-    <AppRoutes />
+    <div className="h-screen w-screen">
+      <AppRoutes />
+    </div>
   </BrowserRouter>
 );
 
