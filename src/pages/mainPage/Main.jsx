@@ -1,5 +1,5 @@
 import React from 'react';
-import ItemCard from '../../components/Cards';
+import ItemCard from '../../components/itemCard/Cards';
 import data from '../../constants/Data';
 
 const MainPage = () => (
