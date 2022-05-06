@@ -3,16 +3,14 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 
 const Signup = () => {
-  console.log('data');
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
 
-  const submit = (data) => {
-    console.log(data);
-    fetch('http://localhost:3000/signup', {
+  const submit = async (data) => {
+    await fetch('http://localhost:3000/signup', {
       method: 'post',
       headers: {
         'Content-Type': 'application/json',
@@ -23,47 +21,62 @@ const Signup = () => {
     })
       .then((res) => {
         if (res.ok) {
-          console.log(res.headers.get('Authorization'));
           localStorage.setItem('token', res.headers.get('Authorization'));
           return res.json();
         }
         throw new Error(res);
       })
-      .then((json) => console.log(json))
-      .catch((err) => console.log(err));
+      .then((json) => json)
+      .catch((err) => err);
   };
 
   return (
-    <div className="mt-44">
-      <form onSubmit={handleSubmit(submit)}>
-        <p>Username</p>
+    <div className="w-full h-full p-50 flex justify-center items-center">
+      <form onSubmit={handleSubmit(submit)} className="flex flex-col w-[50vw]">
+        <span>Username</span>
         <input
-          className="border-4"
-          {...register('username', { required: true })}
+          type="text"
+          {...register('username', {
+            required: true,
+            maxLength: 15,
+            minLength: 3,
+          })}
+          className="border-2 outline-dashed"
         />
-        {errors.username && <span>This field is required</span>}
-        <p>Email</p>
+        <p>{errors.username && 'this field need to be modefied'}</p>
+        <span className="mt-5">Email</span>
         <input
-          className="border-4"
           type="email"
-          {...register('email', { required: true })}
+          {...register('email', {
+            required: true,
+            pattern: /^[\w-\\.]+@([\w-]+\.)+[\w-]{2,4}$/,
+          })}
+          className="border-2 outline-dashed"
         />
-        {errors.email && <span>This field is required</span>}
-        <p>Password</p>
+        <p>{errors.email && 'this field need to be modefied'}</p>
+        <span className="mt-5">Password</span>
         <input
           type="password"
-          className="border-4"
-          {...register('password', { required: true })}
+          {...register('password', {
+            required: true,
+            minLength: 8,
+          })}
+          className="border-2 outline-dashed"
         />
-        {errors.password && <span>This field is required</span>}
-        <p>Confirm password</p>
+        <p>{errors.password && 'this field need to be modefied'}</p>
+        <span className="mt-5">Password Confirmation</span>
         <input
-          className="border-4"
           type="password"
-          {...register('password_confirmation', { required: true })}
+          {...register('password_confirmation', {
+            required: true,
+            minLength: 8,
+          })}
+          className="border-2 outline-dashed"
         />
-        {errors.password_confirmation && <span>This field is required</span>}
-        <input type="submit" />
+        <p>
+          {errors.password_confirmation && 'this field need to be modefied'}
+        </p>
+        <input type="submit" className="border-2 mt-10" />
       </form>
     </div>
   );
