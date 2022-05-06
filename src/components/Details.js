@@ -1,18 +1,20 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import data from '../constants/Data';
+import color from './color.png';
+import reserve from './reserve.png';
 
 const Details = () => {
   const { itemId } = useParams();
   const selectedItem = data.find((item) => item.id.toString() === itemId);
-  console.log(selectedItem);
   return (
-    <>
-      <div className="flex mt-28 place-content-center">
+    <main class="flex flex-col">
+
+      <div className="flex pt-20 place-content-center h-max">
         <div>
           <img
             src={selectedItem.image}
-            className="max-w-3xl max-h-fit"
+            className="max-w-xl max-h-fit"
             alt="ferrari"
           />
         </div>
@@ -52,14 +54,19 @@ const Details = () => {
             Representative
           </h3>
           <h6 className="font-bold mt-4 text-right">Discover More Models</h6>
+          <img src={color} alt="color" className="w-24 cursor-pointer ml-36 pt-12 pb-12" />
+          <button type="button" className="bg-lime-500 rounded-full w-44 h-14 text-neutral-50 flex p-4">
+            <img src={reserve} alt="reserve " className="h-8" />
+            <span className="text-lg">Reservation</span>
+          </button>
         </div>
       </div>
-      <Link to="/main">
-        <div className="w-12 cursor-pointer">
-          <img src="../images/back.png" alt="back" />
-        </div>
-      </Link>
-    </>
+      <div className="bg-lime-500 rounded-r-full w-12">
+        <Link to="/main">
+          <img src="../images/back2.png" alt="back" className="w-12 cursor-pointer pr-2" />
+        </Link>
+      </div>
+    </main>
   );
 };
 
