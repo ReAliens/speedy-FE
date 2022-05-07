@@ -17,7 +17,7 @@ export const signupDone = (payload) => ({
   payload,
 });
 
-const signup = (data) => (dispatch) => {
+const signupAction = (data) => (dispatch) => {
   dispatch(signupStart());
   return axios
     .post(`${baseUrl}/signup`, { user: data })
@@ -31,4 +31,4 @@ const signup = (data) => (dispatch) => {
     .catch((err) => dispatch(signupFailure(err)));
 };
 
-export default signup;
+export default signupAction;

@@ -2,7 +2,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
-import signup from '../../redux/Reducers/auth/authActions';
+import signupAction from '../../redux/auth/authActions';
 
 const Signup = () => {
   const dispatch = useDispatch();
@@ -13,26 +13,7 @@ const Signup = () => {
   } = useForm();
 
   const submit = (data) => {
-    console.log(data);
-    dispatch(signup(data));
-    // await fetch('http://localhost:3000/signup', {
-    //   method: 'post',
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //   },
-    //   body: JSON.stringify({
-    //     user: data,
-    //   }),
-    // })
-    //   .then((res) => {
-    //     if (res.ok) {
-    //       localStorage.setItem('token', res.headers.get('Authorization'));
-    //       return res.json();
-    //     }
-    //     throw new Error(res);
-    //   })
-    //   .then((json) => json)
-    //   .catch((err) => err);
+    dispatch(signupAction(data));
   };
 
   return (
