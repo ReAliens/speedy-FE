@@ -1,8 +1,12 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { useDispatch } from 'react-redux';
+import loginAction from '../../redux/auth/loginAction';
 
 const Login = () => {
+  const dispatch = useDispatch();
+
   const {
     register,
     handleSubmit,
@@ -10,25 +14,7 @@ const Login = () => {
   } = useForm();
 
   const submit = async (data) => {
-    console.log(data);
-    // await fetch('http://localhost:3000/login', {
-    //   method: 'post',
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //   },
-    //   body: JSON.stringify({
-    //     user: data,
-    //   }),
-    // })
-    //   .then((res) => {
-    //     if (res.ok) {
-    //       localStorage.setItem('token', res.headers.get('Authorization'));
-    //       return res.json();
-    //     }
-    //     throw new Error(res);
-    //   })
-    //   .then((json) => json)
-    //   .catch((err) => err);
+    dispatch(loginAction(data));
   };
 
   return (

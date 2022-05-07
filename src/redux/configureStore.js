@@ -2,9 +2,11 @@ import { configureStore } from '@reduxjs/toolkit';
 import logger from 'redux-logger';
 import thunk from 'redux-thunk';
 import authReducer from './auth/authReducer';
+import loginReducer from './auth/loginReducer';
 
 const rootReducer = {
-  auth: authReducer,
+  signup: authReducer,
+  login: loginReducer,
 };
 
 const store = configureStore({
