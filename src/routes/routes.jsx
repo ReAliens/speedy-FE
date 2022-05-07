@@ -3,7 +3,7 @@ import { Suspense } from 'react';
 import Reservations from '../pages/reservationsPage/Reservations';
 import Home from '../pages/home/Home';
 import MainPage from '../pages/mainPage/Main';
-import Details from '../components/Details';
+import Details from '../pages/details/Details';
 import Login from '../pages/login/Login';
 
 const AppRoutes = () => (
