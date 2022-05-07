@@ -10,21 +10,25 @@ const Login = () => {
   } = useForm();
 
   const submit = async (data) => {
-    await fetch('http://localhost:3000/login', {
-      method: 'post',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        user: data,
-      }),
-    }).then((res) => {
-      if (res.ok) {
-        localStorage.setItem('token', res.headers.get('Authorization'));
-        return res.json();
-      }
-      throw new Error(res);
-    });
+    console.log(data);
+    // await fetch('http://localhost:3000/login', {
+    //   method: 'post',
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //   },
+    //   body: JSON.stringify({
+    //     user: data,
+    //   }),
+    // })
+    //   .then((res) => {
+    //     if (res.ok) {
+    //       localStorage.setItem('token', res.headers.get('Authorization'));
+    //       return res.json();
+    //     }
+    //     throw new Error(res);
+    //   })
+    //   .then((json) => json)
+    //   .catch((err) => err);
   };
 
   return (

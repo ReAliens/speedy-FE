@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Header = ({ onClick }) => {
-  console.log('data');
   const logout = () => {
     fetch('http://localhost:3000/logout', {
       method: 'delete',

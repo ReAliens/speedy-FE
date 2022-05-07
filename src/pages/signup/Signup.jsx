@@ -1,33 +1,38 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { useDispatch } from 'react-redux';
+import signup from '../../redux/Reducers/auth/authActions';
 
 const Signup = () => {
+  const dispatch = useDispatch();
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
 
-  const submit = async (data) => {
-    await fetch('http://localhost:3000/signup', {
-      method: 'post',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        user: data,
-      }),
-    })
-      .then((res) => {
-        if (res.ok) {
-          localStorage.setItem('token', res.headers.get('Authorization'));
-          return res.json();
-        }
-        throw new Error(res);
-      })
-      .then((json) => json)
-      .catch((err) => err);
+  const submit = (data) => {
+    console.log(data);
+    dispatch(signup(data));
+    // await fetch('http://localhost:3000/signup', {
+    //   method: 'post',
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //   },
+    //   body: JSON.stringify({
+    //     user: data,
+    //   }),
+    // })
+    //   .then((res) => {
+    //     if (res.ok) {
+    //       localStorage.setItem('token', res.headers.get('Authorization'));
+    //       return res.json();
+    //     }
+    //     throw new Error(res);
+    //   })
+    //   .then((json) => json)
+    //   .catch((err) => err);
   };
 
   return (

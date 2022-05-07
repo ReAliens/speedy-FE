@@ -1,0 +1,9 @@
+export const SIGNUP_START = 'SIGNUP_START';
+export const SIGNUP_DONE = 'SIGNUP_DONE';
+export const SIGNUP_FAILURE = 'SIGNUP_FAILURE';
+export const LOGIN_START = 'LOGIN_START';
+export const LOGIN_DONE = 'LOGIN_DONE';
+export const LOGIN_FAILURE = 'LOGIN_FAILURE';
+export const LOGOUT_START = 'LOGOUT_START';
+export const LOGOUT_DONE = 'LOGOUT_DONE';
+export const LOGOUT_FAILURE = 'LOGOUT_FAILURE';
