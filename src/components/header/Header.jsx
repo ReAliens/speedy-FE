@@ -1,25 +1,13 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import logoutAction from '../../redux/auth/loginAction';
 
 const Header = ({ onClick }) => {
+  const dispatch = useDispatch();
+
   const logout = () => {
-    fetch('http://localhost:3000/logout', {
-      method: 'delete',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: localStorage.getItem('token'),
-      },
-    })
-      .then((res) => {
-        if (res.ok) {
-          return res.json();
-        }
-        return res.json().then((json) => Promise.reject(json));
-      })
-      .then((json) => {
-        console.log(json);
-      })
-      .catch((err) => console.error(err));
+    dispatch(logoutAction());
   };
   return (
     <div className="h-[60px] fixed top-0 w-full z-10 px-6 flex items-center justify-between bg-orange-400 text-white">
