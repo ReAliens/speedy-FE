@@ -54,7 +54,7 @@ const Details = () => {
             Representative
           </h3>
           <h6 className="font-bold mt-4 text-right">Discover More Models</h6>
-          <img src={color} alt="color" className="w-24 cursor-pointer ml-36 pt-12 pb-12" />
+          <img src={color} alt="color" className="w-24 cursor-pointer ml-36 pt-8 pb-8" />
           <button type="button" className="bg-lime-500 rounded-full w-44 h-14 text-neutral-50 flex p-4">
             <img src={reserve} alt="reserve " className="h-8" />
             <span className="text-lg">Reservation</span>

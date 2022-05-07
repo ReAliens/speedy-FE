@@ -1,0 +1,7 @@
+.container {
+    background-image: url('../../../public/images/bmw.svg');
+    background-size: cover;
+    background-size: 50rem;
+    background-repeat: no-repeat;
+    background-position: 800px 250px;
+}

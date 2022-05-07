@@ -5,6 +5,7 @@ import Home from '../pages/home/Home';
 import MainPage from '../pages/mainPage/Main';
 import Details from '../components/Details';
 import Login from '../pages/login/Login';
+import Lifestyle from '../pages/lifestyle/Lifestyle';
 
 const AppRoutes = () => (
   <Suspense>
@@ -14,6 +15,7 @@ const AppRoutes = () => (
       <Route path="/reservations" element={<Reservations />} />
       <Route path="/details/:itemId" element={<Details />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/lifestyle" element={<Lifestyle />} />
     </Routes>
   </Suspense>
 );

@@ -34,4 +34,43 @@ const data = [
   },
 ];
 
+// const carStore = [
+//   {
+//     id: 3,
+//     car: '../images/car3.jpg',
+//   },
+//   {
+//     id: 5,
+//     car: '../images/car5.jpg',
+//   },
+//   {
+//     id: 3,
+//     car: '../images/car3.jpg',
+//   },
+//   {
+//     id: 5,
+//     car: '../images/car5.jpg',
+//   },
+//   {
+//     id: 3,
+//     car: '../images/car3.jpg',
+//   },
+//   {
+//     id: 5,
+//     car: '../images/car5.jpg',
+//   },
+//   {
+//     id: 5,
+//     car: '../images/car5.jpg',
+//   },
+//   {
+//     id: 3,
+//     car: '../images/car3.jpg',
+//   },
+//   {
+//     id: 5,
+//     car: '../images/car5.jpg',
+//   },
+// ];
+
 export default data;
