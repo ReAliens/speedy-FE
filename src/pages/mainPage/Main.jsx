@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import Carousel from 'nuka-carousel';
 import ItemCard from '../../components/itemCard/Cards';
 import { getItems } from '../../redux/items/itemsActions';
 
@@ -7,10 +8,10 @@ const MainPage = () => {
   const dispatch = useDispatch();
   const items = useSelector((state) => state.item.items);
   useEffect(() => {
-    dispatch(getItems());
+    if (!items.length) {
+      dispatch(getItems());
+    }
   }, [dispatch]);
-
-  console.log(items);
 
   return (
     <div className="flex flex-col justify-center w-screen h-[90vh]">
@@ -18,10 +19,12 @@ const MainPage = () => {
         Latest Models
       </h1>
       <p className="text-center text-xs">Please Select your favourite model</p>
-      <div className="flex justify-center mt-10">
-        {items.map((item) => (
-          <ItemCard key={item.id} item={item} />
-        ))}
+      <div>
+        <Carousel slidesToShow={3} slidesToScroll={items.length / 3}>
+          {items.map((item) => (
+            <ItemCard key={item.id} item={item} />
+          ))}
+        </Carousel>
       </div>
     </div>
   );
