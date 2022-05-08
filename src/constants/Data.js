@@ -23,9 +23,9 @@ const data = [
   },
   {
     id: 4,
-    image: '../images/car1.png',
+    image: '../images/bmw.png',
     title: 'CHEVROLIT',
-    financeFee: 429,
+    financeFee: 4293,
     purchaseFee: 149,
     payable: 9872,
     Duration: 88,

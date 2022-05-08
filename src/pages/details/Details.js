@@ -12,45 +12,55 @@ const Details = () => {
         <div>
           <img
             src={selectedItem.image}
-            className="max-w-xl max-h-fit"
+            className="max-w-xl max-h-fit pt-24"
             alt="ferrari"
           />
         </div>
         <div className="ml-20">
           <h2 className="font-bold text-center text-3xl">{selectedItem.title}</h2>
-          <h6 className="mb-8 text-center">discount offer</h6>
-          <table className="table-fixed">
-            <tr className="bg-gray-300">
-              <td className="px-2 py-2">Finance fee</td>
-              <td>
-                $
-                <span>{selectedItem.financeFee}</span>
-              </td>
-            </tr>
-            <tr>
-              <td className="px-2 py-2">Option to purchase fee</td>
-              <td>
-                $
-                <span>{selectedItem.purchaseFee}</span>
-              </td>
-            </tr>
-            <tr className="bg-gray-300">
-              <td className="px-2 py-2">Total ammount payable</td>
-              <td>
-                $
-                <span>{selectedItem.payable}</span>
-              </td>
-            </tr>
-            <tr>
-              <td className="px-2 py-2">Duration</td>
-              <td>{selectedItem.Duration}</td>
-            </tr>
-          </table>
-          <h3 className="mt-4">
+          <h6 className="mb-8 text-center text-xs">discount offer</h6>
+          <div className="table text-sm">
+            <div className="bg-gray-300">
+              <h5 className="px-2 py-2 justify-end flex items-center">
+                Finance fee
+                <span className="flex justify-end items-center w-56">
+                  $
+                  {selectedItem.financeFee}
+                </span>
+              </h5>
+            </div>
+            <div>
+              <h5 className="px-2 py-2 justify-end flex items-center">
+                Option to purchase fee
+                <span className="flex justify-end items-center w-36">
+                  $
+                  {selectedItem.purchaseFee}
+                </span>
+              </h5>
+            </div>
+            <div className="bg-gray-300">
+              <h5 className="px-2 py-2 justify-end flex items-center">
+                Total ammount payable
+                <span className="ml-24">
+                  $
+                  {selectedItem.payable}
+                </span>
+              </h5>
+            </div>
+            <div>
+              <h5 className="px-2 py-2 justify-end flex items-center">
+                Duration
+                <span className="flex justify-end items-center w-60">
+                  {selectedItem.Duration}
+                  Months
+                </span>
+              </h5>
+            </div>
+          </div>
+          <h5 className="mt-4">
             <strong>{selectedItem.APR}</strong>
-            {' '}
             Representative
-          </h3>
+          </h5>
           <h6 className="font-bold mt-4 text-right">Discover More Models</h6>
           <button type="button" className="bg-lime-500 rounded-full w-44 h-14 text-neutral-50 flex p-4">
             <img src="../reserve.png" alt="reserve " className="h-8" />
