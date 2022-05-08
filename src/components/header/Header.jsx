@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import logoutAction from '../../redux/auth/loginAction';
+import { logoutAction } from '../../redux/auth/authActions';
 
 const Header = ({ onClick }) => {
   const dispatch = useDispatch();

@@ -2,7 +2,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
-import signupAction from '../../redux/auth/authActions';
+import { signupAction } from '../../redux/auth/authActions';
 
 const Signup = () => {
   const dispatch = useDispatch();
@@ -19,17 +19,17 @@ const Signup = () => {
   return (
     <div className="w-full h-full p-50 flex justify-center items-center">
       <form onSubmit={handleSubmit(submit)} className="flex flex-col w-[50vw]">
-        <span>Username</span>
+        {/* <span>Username</span>
         <input
           type="text"
-          {...register('username', {
+          {...register('name', {
             required: true,
             maxLength: 15,
             minLength: 3,
           })}
           className="border-2 outline-dashed"
         />
-        <p>{errors.username && 'this field need to be modefied'}</p>
+        <p>{errors.name && 'this field need to be modefied'}</p> */}
         <span className="mt-5">Email</span>
         <input
           type="email"
@@ -50,7 +50,7 @@ const Signup = () => {
           className="border-2 outline-dashed"
         />
         <p>{errors.password && 'this field need to be modefied'}</p>
-        <span className="mt-5">Password Confirmation</span>
+        {/* <span className="mt-5">Password Confirmation</span>
         <input
           type="password"
           {...register('password_confirmation', {
@@ -61,7 +61,7 @@ const Signup = () => {
         />
         <p>
           {errors.password_confirmation && 'this field need to be modefied'}
-        </p>
+        </p> */}
         <input type="submit" className="border-2 mt-10" />
       </form>
     </div>

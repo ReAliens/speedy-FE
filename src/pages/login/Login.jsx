@@ -2,7 +2,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
-import loginAction from '../../redux/auth/loginAction';
+import { loginAction } from '../../redux/auth/authActions';
 
 const Login = () => {
   const dispatch = useDispatch();
