@@ -67,6 +67,7 @@ const authReducer = (state = initialState, action) => {
       return {
         ...state,
         loading: false,
+        data: null,
       };
     default:
       return state;
