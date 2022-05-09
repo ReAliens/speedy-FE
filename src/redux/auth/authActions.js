@@ -1,4 +1,14 @@
-import { SIGNUP_DONE, SIGNUP_FAILURE, SIGNUP_START } from '../constants';
+import {
+  SIGNUP_DONE,
+  SIGNUP_FAILURE,
+  SIGNUP_START,
+  LOGIN_DONE,
+  LOGIN_START,
+  LOGIN_FAILURE,
+  LOGOUT_START,
+  LOGOUT_FAILURE,
+  LOGOUT_DONE,
+} from '../constants';
 
 const baseUrl = 'http://localhost:3000';
 
@@ -17,30 +27,30 @@ export const signupDone = (payload) => ({
 });
 
 export const loginStart = () => ({
-  type: 'LOGIN_START',
+  type: LOGIN_START,
 });
 
 export const loginFailure = (payload) => ({
-  type: 'LOGIN_FAILURE',
+  type: LOGIN_FAILURE,
   payload,
 });
 
 export const loginDone = (payload) => ({
-  type: 'LOGIN_DONE',
+  type: LOGIN_DONE,
   payload,
 });
 
 export const logoutStart = () => ({
-  type: 'LOGOUT_START',
+  type: LOGOUT_START,
 });
 
 export const logoutFailure = (payload) => ({
-  type: 'LOGOUT_FAILURE',
+  type: LOGOUT_FAILURE,
   payload,
 });
 
 export const logoutDone = (payload) => ({
-  type: 'LOGOUT_DONE',
+  type: LOGOUT_DONE,
   payload,
 });
 
@@ -81,12 +91,11 @@ export const loginAction = (data) => (dispatch) => {
     .then((res) => {
       if (res.ok) {
         localStorage.setItem('token', res.headers.get('Authorization'));
-        dispatch(loginDone(res));
         return res.json();
       }
       return res.text().then((text) => Promise.reject(text));
     })
-    .then((json) => json)
+    .then((json) => dispatch(loginDone(json.data)))
     .catch((err) => dispatch(loginFailure(err)));
 };
 
@@ -108,5 +117,5 @@ export const logoutAction = () => (dispatch) => {
       return res.json().then((json) => Promise.reject(json));
     })
     .then((json) => json)
-    .catch((err) => dispatch(logoutDone(err)));
+    .catch((err) => dispatch(logoutFailure(err)));
 };

@@ -1,13 +1,15 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { logoutAction } from '../../redux/auth/authActions';
 
 const Header = ({ onClick }) => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const logout = () => {
     dispatch(logoutAction());
+    navigate('/login');
   };
   return (
     <div className="h-[60px] fixed top-0 w-full z-10 px-6 flex items-center justify-between bg-orange-400 text-white">
