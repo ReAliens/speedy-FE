@@ -1,5 +1,3 @@
-/* eslint-disable react/style-prop-object */
-/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
