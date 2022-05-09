@@ -13,7 +13,7 @@ import {
 const initialState = {
   loading: false,
   error: undefined,
-  data: [],
+  data: null,
 };
 
 const authReducer = (state = initialState, action) => {
