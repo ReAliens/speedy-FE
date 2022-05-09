@@ -1,15 +1,13 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { loginAction } from '../../redux/auth/authActions';
 
 const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const selecor = useSelector((state) => state.auth);
-  console.log(selecor, 'login');
   const {
     register,
     handleSubmit,

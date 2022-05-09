@@ -11,7 +11,6 @@ import Signup from '../pages/signup/Signup';
 
 const AppRoutes = () => {
   const selector = useSelector((state) => state.auth);
-  console.log(selector);
   return (
     <Suspense>
       <Routes>
