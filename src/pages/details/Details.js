@@ -1,54 +1,66 @@
-import React from 'react';
-import { useParams, Link } from 'react-router-dom';
-import data from '../../constants/Data';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { Link, useParams } from 'react-router-dom';
+import { getItems } from '../../redux/items/itemsActions';
 
 const Details = () => {
   const { itemId } = useParams();
-  const selectedItem = data.find((item) => item.id.toString() === itemId);
+  const dispatch = useDispatch();
+  const items = useSelector((state) => state.items.items);
+
+  useEffect(() => {
+    dispatch(getItems());
+  }, []);
+
+  const item = items.find((item) => item.id.toString() === itemId);
+
   return (
+
     <main class="flex flex-col">
 
       <div className="flex pt-20 place-content-center h-max">
         <div>
           <img
-            src={selectedItem.image}
+            src={item.photo}
             className="max-w-xl max-h-fit"
             alt="ferrari"
           />
         </div>
         <div className="ml-20">
-          <h2 className="font-bold text-center text-3xl">{selectedItem.title}</h2>
+          <h2 className="font-bold text-center text-3xl">
+            <span>add by </span>
+          </h2>
+          <h6 className="mb-8 text-center">{item.description}</h6>
           <h6 className="mb-8 text-center">discount offer</h6>
           <table className="table-fixed">
             <tr className="bg-gray-300">
               <td className="px-2 py-2">Finance fee</td>
               <td>
                 $
-                <span>{selectedItem.financeFee}</span>
+                <span>{item.price}</span>
               </td>
             </tr>
             <tr>
               <td className="px-2 py-2">Option to purchase fee</td>
               <td>
                 $
-                <span>{selectedItem.purchaseFee}</span>
+                <span>{item.price}</span>
               </td>
             </tr>
             <tr className="bg-gray-300">
               <td className="px-2 py-2">Total ammount payable</td>
               <td>
                 $
-                <span>{selectedItem.payable}</span>
+                <span>11</span>
               </td>
             </tr>
             <tr>
               <td className="px-2 py-2">Duration</td>
-              <td>{selectedItem.Duration}</td>
+              <td>11</td>
             </tr>
           </table>
           <h3 className="mt-4">
-            <strong>{selectedItem.APR}</strong>
-            {' '}
+            <strong>33</strong>
             Representative
           </h3>
           <h6 className="font-bold mt-4 text-right">Discover More Models</h6>
@@ -64,6 +76,7 @@ const Details = () => {
         </Link>
       </div>
     </main>
+
   );
 };
 
