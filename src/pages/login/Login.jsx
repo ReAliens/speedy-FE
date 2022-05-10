@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
@@ -16,15 +15,13 @@ const Login = () => {
 
   const submit = async (data) => {
     dispatch(loginAction(data));
-    navigate('/');
+    navigate('/home');
   };
 
   return (
-    <div className="mt-24">
-      <form onSubmit={handleSubmit(submit)}>
-        <p>{errors.email && 'this field need to be modified'}</p>
-
-        <p>email</p>
+    <div className="w-full h-full p-50 flex justify-center items-center bg-orange-400">
+      <form onSubmit={handleSubmit(submit)} className="flex flex-col w-[50vw]">
+        <p>Email</p>
         <input
           type="email"
           {...register('email', {
@@ -32,7 +29,8 @@ const Login = () => {
             pattern: /^[\w-\\.]+@([\w-]+\.)+[\w-]{2,4}$/,
           })}
         />
-        <p>password</p>
+        <p>{errors.email && 'this field need to be modified'}</p>
+        <p>Password</p>
         <input
           type="password"
           {...register('password', {
@@ -40,7 +38,13 @@ const Login = () => {
             minLength: 8,
           })}
         />
-        <button type="submit">submit</button>
+        <p>{errors.password && 'this field need to be modified'}</p>
+        <button
+          type="submit"
+          className="border-2 border-green-500 rounded-3xl hover:text-green-500 hover:bg-white hover:font-bold py-2 px-10 bg-green-500  text-white mt-5"
+        >
+          submit
+        </button>
       </form>
     </div>
   );
