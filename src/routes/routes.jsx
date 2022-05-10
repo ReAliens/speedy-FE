@@ -8,7 +8,6 @@ import Details from '../pages/details/Details';
 import AddCar from '../pages/addcar/AddCar';
 import Login from '../pages/login/Login';
 import Signup from '../pages/signup/Signup';
-// import useAuth from '../hooks/useAuth';
 
 const AppRoutes = () => {
   const selector = useSelector((state) => state.auth);
@@ -17,7 +16,7 @@ const AppRoutes = () => {
       <Routes>
         {selector.data ? (
           <>
-            <Route path="/" element={<MainPage />} />
+            <Route path="/home" element={<MainPage />} />
             <Route path="/reservations" element={<Reservations />} />
             <Route path="/details/:itemId" element={<Details />} />
             <Route path="/add-car" element={<AddCar />} />
@@ -25,6 +24,7 @@ const AppRoutes = () => {
         ) : (
           <>
             <Route path="/" element={<Home />} />
+            <Route path="/home" element={<MainPage />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
           </>

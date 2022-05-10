@@ -32,7 +32,7 @@ code {
     monospace;
 }
 
-.car {
+/* .car {
   width: 200px;
   height: 100px;
   background: url(../public/Black-Car.svg);
@@ -71,4 +71,4 @@ code {
   to {
     transform: rotate(360deg);
   }
-}
+} */
