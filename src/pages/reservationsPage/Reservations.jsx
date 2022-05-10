@@ -1,12 +1,7 @@
-/* eslint-disable max-len */
 import React from 'react';
-// import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
-// import DatePicker from 'react-datepicker';
 import { loginAction } from '../../redux/auth/authActions';
-
-import 'react-datepicker/dist/react-datepicker.css';
 
 const Reservations = () => {
   const dispatch = useDispatch();
@@ -18,8 +13,6 @@ const Reservations = () => {
   const submit = async (data) => {
     dispatch(loginAction(data));
   };
-
-  // const [date, setDate] = useState(new Date());
 
   return (
     <main>
@@ -33,14 +26,9 @@ const Reservations = () => {
             <h5 className="text-xl text-fuchsia-700">City</h5>
             <input type="text" className="h-10 w-72 border-2 mt-1 mb-6" />
             <h5 className="text-xl text-fuchsia-700">Start Date</h5>
-            {/* <input type="date" className="h-10 w-72 border-2 mt-1 mb-6" value="10/05/2022" /> */}
-
             <input type="date" className="h-10 w-72 border-2 mt-1 mb-6  data-date=" data-date-format="DD MMMM YYYY" value="2022-05-10" />
-
             <h5 className="text-xl text-fuchsia-700">End Date</h5>
-            {/* <input type="text" className="h-10 w-72 border-2 mt-1 mb-6" /> */}
             <input type="date" className="h-10 w-72 border-2 mt-1 mb-6  data-date=" data-date-format="DD MMMM YYYY" value="2022-06-12" />
-
             <br />
             <input type="submit" className="text-2xl font-bold text-fuchsia-700 border-fuchsia-700 p-2 w- border-4 mt-8 mb-12 w-72 cursor-pointer" />
           </form>
