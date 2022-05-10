@@ -5,7 +5,7 @@ import { combineReducers } from 'redux';
 import logger from 'redux-logger';
 import thunk from 'redux-thunk';
 import authReducer from './auth/authReducer';
-import { itemsReducer, singleItemReducer } from './items/itemsReducer';
+import { itemsReducer, singleItemReducer, addNewItemReducer } from './items/itemsReducer';
 
 const persistConfig = {
   key: 'root',
@@ -17,6 +17,7 @@ const rootReducer = combineReducers({
   auth: authReducer,
   items: itemsReducer,
   singleItem: singleItemReducer,
+  addNewItem: addNewItemReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

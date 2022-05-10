@@ -6,6 +6,9 @@ import {
   SINGLE_ITEM_FETCH_REQUEST,
   SINGLE_ITEM_FETCH_SUCCESS,
   SINGLE_ITEM_FETCH_FAILURE,
+  ADD_NEW_ITEM_REQUEST,
+  ADD_NEW_ITEM_SUCCESS,
+  ADD_NEW_ITEM_FAILURE,
 } from '../constants';
 
 const baseurl = 'http://localhost:3000/api/v1/items';
@@ -61,5 +64,33 @@ export const getSingleItem = (itemId) => async (dispatch) => {
     .catch((err) => {
       const { error } = err.response.data;
       dispatch(singleItemFetchFailure(error));
+    });
+};
+
+export const addNewItemRequest = () => ({
+  type: ADD_NEW_ITEM_REQUEST,
+});
+
+export const addNewItemSuccess = (item) => ({
+  type: ADD_NEW_ITEM_SUCCESS,
+  item,
+});
+
+export const addNewItemFailure = (error) => ({
+  type: ADD_NEW_ITEM_FAILURE,
+  error,
+});
+
+export const addNewItem = (item) => async (dispatch) => {
+  dispatch(addNewItemRequest());
+  axios
+    .post(baseurl, item)
+    .then((res) => {
+      const item = res.data;
+      dispatch(addNewItemSuccess(item));
+    })
+    .catch((err) => {
+      const { error } = err.response.data;
+      dispatch(addNewItemFailure(error));
     });
 };

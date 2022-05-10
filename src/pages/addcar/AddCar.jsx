@@ -1,5 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { useDispatch, useSelector } from 'react-redux';
+import { addNewItem } from '../../redux/items/itemsActions';
 
 const AddCar = () => {
   const {
@@ -8,9 +10,13 @@ const AddCar = () => {
     reset,
     formState: { errors },
   } = useForm();
-  console.log(errors);
+
+  const dispatch = useDispatch();
+  const currentUser = useSelector((state) => state);
+
   const onSubmit = (data) => {
     console.log(data);
+    dispatch(addNewItem(data));
     reset();
   };
 
@@ -32,7 +38,7 @@ const AddCar = () => {
             <p className="text-red-500 mb-6">
               {errors.name && 'this field is required'}
             </p>
-            <h5 className="text-xl text-fuchsia-700">Model</h5>
+            <h5 className="text-xl text-fuchsia-700">spic</h5>
             <input
               {...register('specs', { required: true })}
               type="text"
@@ -52,17 +58,19 @@ const AddCar = () => {
             <p className="text-red-500 mb-6">
               {errors.price && 'this field is required'}
             </p>
-            <h5 className="text-xl text-fuchsia-700">Image</h5>
+            <h5 className="text-xl text-fuchsia-700">photo</h5>
             <input
-              {...register('image', { required: true })}
+              {...register('photo', { required: true })}
               type="text"
               className="h-10 w-72 border-2 mt-1 "
               placeholder="Image URL"
             />
+
             <p className="text-red-500 mb-6">
               {errors.image && 'this field is required'}
             </p>
-            <h5 className="text-xl text-fuchsia-700">Description</h5>
+
+            <h5 className="text-xl text-fuchsia-700">description</h5>
             <input
               {...register('description', { required: true })}
               type="text"
@@ -72,7 +80,13 @@ const AddCar = () => {
             <p className="text-red-500 mb-6">
               {errors.description && 'this field is required'}
             </p>
+            <input
+              {...register('user_id', { required: true })}
+              type="hidden"
+              value={currentUser.auth.data.id}
+            />
             <br />
+
             <input
               type="submit"
               className="text-2xl font-bold text-fuchsia-700 border-fuchsia-700 p-2 w- border-4 mt-8 w-72 cursor-pointer"

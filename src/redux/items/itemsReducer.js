@@ -5,6 +5,9 @@ import {
   SINGLE_ITEM_FETCH_REQUEST,
   SINGLE_ITEM_FETCH_SUCCESS,
   SINGLE_ITEM_FETCH_FAILURE,
+  ADD_NEW_ITEM_REQUEST,
+  ADD_NEW_ITEM_SUCCESS,
+  ADD_NEW_ITEM_FAILURE,
 } from '../constants';
 
 const initialState = {
@@ -51,6 +54,30 @@ export const singleItemReducer = (state = initialState, action) => {
         items: action.item,
       };
     case SINGLE_ITEM_FETCH_FAILURE:
+      return {
+        ...state,
+        isFetching: false,
+        error: action.error,
+      };
+    default:
+      return state;
+  }
+};
+
+export const addNewItemReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case ADD_NEW_ITEM_REQUEST:
+      return {
+        ...state,
+        isFetching: true,
+      };
+    case ADD_NEW_ITEM_SUCCESS:
+      return {
+        ...state,
+        isFetching: false,
+        items: action.item,
+      };
+    case ADD_NEW_ITEM_FAILURE:
       return {
         ...state,
         isFetching: false,
