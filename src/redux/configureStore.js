@@ -5,17 +5,18 @@ import { combineReducers } from 'redux';
 import logger from 'redux-logger';
 import thunk from 'redux-thunk';
 import authReducer from './auth/authReducer';
-import itemsReducer from './items/itemsReducer';
+import { itemsReducer, singleItemReducer } from './items/itemsReducer';
 
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ['auth', 'items'],
+  whitelist: ['auth'],
 };
 
 const rootReducer = combineReducers({
   auth: authReducer,
   items: itemsReducer,
+  singleItem: singleItemReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

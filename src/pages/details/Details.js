@@ -1,18 +1,16 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
-import { getItems } from '../../redux/items/itemsActions';
+import { getSingleItem } from '../../redux/items/itemsActions';
 
 const Details = () => {
   const { itemId } = useParams();
   const dispatch = useDispatch();
-  const items = useSelector((state) => state.items.items);
+  const item = useSelector((state) => state.singleItem.items);
 
   useEffect(() => {
-    dispatch(getItems());
+    dispatch(getSingleItem(itemId));
   }, []);
-
-  const item = items.find((item) => item.id.toString() === itemId);
 
   return (
 
@@ -28,7 +26,7 @@ const Details = () => {
         </div>
         <div className="ml-20">
           <h2 className="font-bold text-center text-3xl">
-            <span>add by </span>
+            {item.name}
           </h2>
           <h6 className="mb-8 text-center">{item.description}</h6>
           <h6 className="mb-8 text-center">discount offer</h6>
@@ -71,7 +69,7 @@ const Details = () => {
         </div>
       </div>
       <div className="bg-lime-500 rounded-r-full w-12">
-        <Link to="/">
+        <Link to="/home">
           <img src="../images/back2.png" alt="back" className="w-12 cursor-pointer pr-2" />
         </Link>
       </div>
