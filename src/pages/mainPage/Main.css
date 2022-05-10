@@ -1,0 +1,19 @@
+.carousel-arrow-left {
+    position: absolute;
+    right: 1.5em;
+    transform: translateY(-50%);
+    width: 1.4em;
+    border-radius: 50%;
+    /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); */
+    transition: all 0.3s ease-in-out;
+}
+
+.carousel-arrow-right {
+    position: absolute;
+    left: 1.5em;
+    transform: translateY(-50%);
+    width: 1.4em;
+    border-radius: 50%;
+    /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); */
+    transition: all 0.3s ease-in-out;
+}
