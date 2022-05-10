@@ -1,5 +1,9 @@
 import axios from 'axios';
-import { ITEMS_FETCH_REQUEST, ITEMS_FETCH_SUCCESS, ITEMS_FETCH_FAILURE } from '../constants';
+import {
+  ITEMS_FETCH_REQUEST,
+  ITEMS_FETCH_SUCCESS,
+  ITEMS_FETCH_FAILURE,
+} from '../constants';
 
 const baseurl = 'http://localhost:3000/api/v1/items';
 
@@ -17,7 +21,9 @@ export const itemsFetchFailure = (error) => ({
 });
 
 export const getItems = () => async (dispatch) => {
-  axios.get(baseurl)
+  dispatch(itemsFetchRequest());
+  axios
+    .get(baseurl)
     .then((res) => {
       const items = res.data;
       dispatch(itemsFetchSuccess(items));

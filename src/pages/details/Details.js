@@ -3,8 +3,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
 import { getItems } from '../../redux/items/itemsActions';
 
-// import data from '../../constants/Data';
-
 const Details = () => {
   const { itemId } = useParams();
   const dispatch = useDispatch();
@@ -15,7 +13,6 @@ const Details = () => {
   }, []);
 
   const item = items.find((item) => item.id.toString() === itemId);
-
 
   return (
 

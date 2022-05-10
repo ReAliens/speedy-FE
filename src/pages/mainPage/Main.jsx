@@ -1,20 +1,15 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Carousel from 'nuka-carousel';
-// import { Route, Routes } from 'react-router-dom';
 import ItemCard from '../../components/itemCard/Cards';
 import { getItems } from '../../redux/items/itemsActions';
-// import Details from '../details/Details';
-import './Main.css';
 
 const MainPage = () => {
   const dispatch = useDispatch();
   const items = useSelector((state) => state.items.items);
   useEffect(() => {
-    if (!items.length) {
-      dispatch(getItems());
-    }
-  }, [dispatch]);
+    dispatch(getItems());
+  }, []);
 
   return (
     <div className="flex flex-col justify-center w-screen h-[90vh]">
@@ -30,7 +25,7 @@ const MainPage = () => {
             <button
               onClick={nextSlide}
               type="button"
-              className="carousel-right-btn"
+              className="bg-orange-400 w-16 h-12 rounded-l-[50%] "
             >
               next
             </button>
@@ -39,7 +34,7 @@ const MainPage = () => {
             <button
               onClick={previousSlide}
               type="button"
-              className="carousel-left-btn"
+              className="bg-orange-400 w-16 h-12 rounded-r-[50%] "
             >
               back
             </button>
@@ -50,15 +45,6 @@ const MainPage = () => {
           {items?.map((item) => (
             <ItemCard key={item.id} item={item} />
           ))}
-          {/* <Routes>
-            {items?.map((item) => (
-              <Route
-                path={`/details/${item.id}`}
-                key={item.id}
-                element={<Details item={item} />}
-              />
-            ))}
-          </Routes> */}
         </Carousel>
       </div>
     </div>
