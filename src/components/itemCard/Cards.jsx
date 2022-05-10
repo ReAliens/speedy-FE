@@ -1,9 +1,16 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
-const ItemCard = ({ prop }) => (
-  <Link to={`/details/${prop.id}`}>
-    <div className="grid grid-rows-2 gap-1 m-4 place-items-center w-56 pt-5 cursor-pointer">
+const ItemCard = ({ prop }) => {
+  const navigate = useNavigate();
+  const selector = useSelector((state) => state.auth);
+  return (
+    <div
+      className="grid grid-rows-2 gap-1 m-4 place-items-center w-56 pt-5 cursor-pointer"
+      onClick={() => (selector.data ? navigate(`/details/${prop.id}`) : null)}
+      role="presentation"
+    >
       <div className="bg-orange-200 relative flex justify-center items-center w-28 h-28 rounded-full">
         <img
           src={prop.image}
@@ -22,7 +29,7 @@ const ItemCard = ({ prop }) => (
         <img src="./images/twitter.png" alt="facebook" className="h-8 mr-4" />
       </div>
     </div>
-  </Link>
-);
+  );
+};
 
 export default ItemCard;

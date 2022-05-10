@@ -1,10 +1,11 @@
-/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { signupAction } from '../../redux/auth/authActions';
 
 const Signup = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const {
     register,
@@ -14,22 +15,12 @@ const Signup = () => {
 
   const submit = (data) => {
     dispatch(signupAction(data));
+    navigate('/home');
   };
 
   return (
-    <div className="w-full h-full p-50 flex justify-center items-center">
+    <div className="w-full h-full p-50 flex justify-center items-center bg-orange-400">
       <form onSubmit={handleSubmit(submit)} className="flex flex-col w-[50vw]">
-        {/* <span>Username</span>
-        <input
-          type="text"
-          {...register('name', {
-            required: true,
-            maxLength: 15,
-            minLength: 3,
-          })}
-          className="border-2 outline-dashed"
-        />
-        <p>{errors.name && 'this field need to be modefied'}</p> */}
         <span className="mt-5">Email</span>
         <input
           type="email"
@@ -50,19 +41,12 @@ const Signup = () => {
           className="border-2 outline-dashed"
         />
         <p>{errors.password && 'this field need to be modefied'}</p>
-        {/* <span className="mt-5">Password Confirmation</span>
-        <input
-          type="password"
-          {...register('password_confirmation', {
-            required: true,
-            minLength: 8,
-          })}
-          className="border-2 outline-dashed"
-        />
-        <p>
-          {errors.password_confirmation && 'this field need to be modefied'}
-        </p> */}
-        <input type="submit" className="border-2 mt-10" />
+        <button
+          type="submit"
+          className="border-2 border-green-500 rounded-3xl hover:text-green-500 hover:bg-white hover:font-bold py-2 px-10 bg-green-500  text-white mt-5"
+        >
+          Submit
+        </button>
       </form>
     </div>
   );
