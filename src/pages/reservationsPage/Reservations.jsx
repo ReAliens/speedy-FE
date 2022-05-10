@@ -20,7 +20,7 @@ const Reservations = () => {
         <div className="font-medium bg-violet-50 mt-24 flex justify-center w-1/2">
 
           <form onSubmit={handleSubmit(submit)}>
-            <h2 className="underline underline-offset-8 decoration-fuchsia-700 decoration-wavy mt-8 mb-16 text-3xl">Make Your Reservation</h2>
+            <h2 className="underline underline-offset-8 decoration-fuchsia-700 decoration-double mt-8 mb-16 text-3xl">Make Your Reservation</h2>
             <h5 className="text-xl text-fuchsia-700 mt-10">Select Car</h5>
             <input type="text" className="h-10 w-72 border-2 mt-1 mb-6" value="porsche boxster 718" />
             <h5 className="text-xl text-fuchsia-700">City</h5>
