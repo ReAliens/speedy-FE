@@ -89,7 +89,7 @@ const AddCar = () => {
 
             <input
               type="submit"
-              className="rounded uppercase font-serif font-bold text-fuchsia-700 border-fuchsia-700 py-px border-2 w-20 cursor-pointer md:ml-14 md:py-1 md:w-36 md:text-base md:bg-green-700 md:text-white md:font-semi-bold md:border-red-900 md:rounded-full"
+              className="rounded uppercase font-serif font-bold text-fuchsia-700 border-green-700 py-px border-2 w-20 cursor-pointer md:ml-14 md:py-1 md:w-36 md:text-base md:bg-green-700 md:text-white md:font-semi-bold md:border-red-900 md:rounded-full"
             />
             </div>
           </form>
