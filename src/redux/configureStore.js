@@ -6,6 +6,7 @@ import logger from 'redux-logger';
 import thunk from 'redux-thunk';
 import authReducer from './auth/authReducer';
 import itemsReducer from './items/itemsReducer';
+import reservationsReducer from './reserveds/reserveReducer';
 
 const persistConfig = {
   key: 'root',
@@ -16,6 +17,7 @@ const persistConfig = {
 const rootReducer = combineReducers({
   auth: authReducer,
   items: itemsReducer,
+  reservation: reservationsReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
