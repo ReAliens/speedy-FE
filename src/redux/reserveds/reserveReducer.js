@@ -2,6 +2,9 @@ import {
   RESERVE_ITEM_FETCH_START,
   RESERVE_ITEM_FETCH_SUCCESS,
   RESERVE_ITEM_FETCH_FAILURE,
+  RESERVATIONS_FETCH_FAILURE,
+  RESERVATIONS_FETCH_START,
+  RESERVATIONS_FETCH_SUCCESS,
 } from '../constants';
 
 const initialState = {
@@ -24,6 +27,23 @@ const reservationsReducer = (state = initialState, action) => {
         data: action.payload,
       };
     case RESERVE_ITEM_FETCH_FAILURE:
+      return {
+        ...state,
+        isFetching: false,
+        error: action.payload,
+      };
+    case RESERVATIONS_FETCH_START:
+      return {
+        ...state,
+        isFetching: true,
+      };
+    case RESERVATIONS_FETCH_SUCCESS:
+      return {
+        ...state,
+        isFetching: false,
+        data: action.payload,
+      };
+    case RESERVATIONS_FETCH_FAILURE:
       return {
         ...state,
         isFetching: false,

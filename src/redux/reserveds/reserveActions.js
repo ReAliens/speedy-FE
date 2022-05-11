@@ -3,6 +3,9 @@ import {
   RESERVE_ITEM_FETCH_START,
   RESERVE_ITEM_FETCH_SUCCESS,
   RESERVE_ITEM_FETCH_FAILURE,
+  RESERVATIONS_FETCH_FAILURE,
+  RESERVATIONS_FETCH_START,
+  RESERVATIONS_FETCH_SUCCESS,
 } from '../constants';
 
 const baseurl = 'http://localhost:3000/api/v1';
@@ -17,6 +20,19 @@ export const addReservationSuccess = (payload) => ({
 });
 export const addReservationFailure = (payload) => ({
   type: RESERVE_ITEM_FETCH_FAILURE,
+  payload,
+});
+
+export const reservationsRequest = () => ({
+  type: RESERVATIONS_FETCH_START,
+});
+
+export const reservationsSuccess = (payload) => ({
+  type: RESERVATIONS_FETCH_SUCCESS,
+  payload,
+});
+export const reservationsFailure = (payload) => ({
+  type: RESERVATIONS_FETCH_FAILURE,
   payload,
 });
 
@@ -41,5 +57,19 @@ export const addReservation = (data, user) => async (dispatch) => {
     .catch((err) => {
       const { error } = err.response.data;
       dispatch(addReservationFailure(error));
+    });
+};
+
+export const getReservations = () => async (dispatch) => {
+  dispatch(reservationsRequest());
+  axios
+    .get(`${baseurl}/reserveds`)
+    .then((res) => {
+      const reservations = res.data;
+      dispatch(reservationsSuccess(reservations));
+    })
+    .catch((err) => {
+      const { error } = err.response.data;
+      dispatch(reservationsFailure(error));
     });
 };

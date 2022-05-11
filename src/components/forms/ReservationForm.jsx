@@ -36,7 +36,7 @@ const ReservationForm = ({ submit, carName }) => {
           <option value={carName ? carName : ''} disabled hidden>
             select car
           </option>
-          {items.map((item) => (
+          {items?.map((item) => (
             <option key={item.id} value={item.id}>
               {item.name}
             </option>
