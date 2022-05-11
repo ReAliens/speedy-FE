@@ -14,7 +14,7 @@ const Sidebar = ({ isOpen }) => {
   };
   return (
     isOpen && (
-      <div className="overflow-y-auto py-4 h-full px-3 bg-gray-50 rounded dark:bg-gray-800 fixed top-0 left-0 pt-16 w-[25vw]">
+      <div className="overflow-y-auto py-4 h-full px-3 bg-gray-50 rounded dark:bg-gray-800 fixed top-0 left-0 pt-16 w-[17vw]">
         <ul className="space-y-2">
           <li>
             <Link

@@ -12,8 +12,8 @@ const MainPage = () => {
   }, []);
 
   return (
-    <div className="flex flex-col justify-center w-screen h-[90vh]">
-      <h1 className="font-bold text-center w-full pt-44 text-5xl">
+    <div className="flex flex-col justify-center w-screen h-[90vh] pl-56 pr-12 pt-24 ">
+      <h1 className="font-bold text-center w-full pt-64 text-5xl">
         Latest Models
       </h1>
       <p className="text-center text-xs">Please Select your favourite model</p>
@@ -25,7 +25,7 @@ const MainPage = () => {
             <button
               onClick={nextSlide}
               type="button"
-              className="bg-orange-400 w-16 h-12 rounded-l-[50%] "
+              className="bg-orange-400 mt-96 w-16 h-12 rounded-l-[50%] "
             >
               next
             </button>
@@ -34,7 +34,7 @@ const MainPage = () => {
             <button
               onClick={previousSlide}
               type="button"
-              className="bg-orange-400 w-16 h-12 rounded-r-[50%] "
+              className="bg-orange-400 mt-96 w-16 h-12 rounded-r-[50%] "
             >
               back
             </button>
