@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import Carousel from 'nuka-carousel';
 import ItemCard from '../../components/itemCard/Cards';
 import { getItems } from '../../redux/items/itemsActions';
+import './main.css';
 
 const MainPage = () => {
   const dispatch = useDispatch();
@@ -13,7 +14,7 @@ const MainPage = () => {
 
   return (
     <div className="flex flex-col justify-center w-screen h-[90vh]">
-      <h1 className="font-bold text-center w-full pt-44 text-5xl">
+      <h1 className="font-bold text-center w-full pt-8 text-5xl">
         Latest Models
       </h1>
       <p className="text-center text-xs">Please Select your favourite model</p>
@@ -25,18 +26,18 @@ const MainPage = () => {
             <button
               onClick={nextSlide}
               type="button"
-              className="bg-orange-400 w-16 h-12 rounded-l-[50%] "
+              className="bg-orange-400 w-16 h-16 rounded-l-[50%] "
             >
-              next
+              <img src="./right-arrow.svg" alt="next" className="right-arrow" />
             </button>
           )}
           renderCenterLeftControls={({ previousSlide }) => (
             <button
               onClick={previousSlide}
               type="button"
-              className="bg-orange-400 w-16 h-12 rounded-r-[50%] "
+              className="bg-orange-400 w-16 h-16 rounded-r-[50%] "
             >
-              back
+              <img src="./left-arrow.svg" alt="next" className="left-arrow" />
             </button>
           )}
           renderBottomCenterControls={false}

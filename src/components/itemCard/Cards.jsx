@@ -7,7 +7,7 @@ const ItemCard = ({ item }) => {
   const selector = useSelector((state) => state.auth);
   return (
     <div
-      className="grid grid-rows-2 gap-1 m-4 place-items-center w-56 pt-5 cursor-pointer"
+      className="grid gap-1 m-4 place-items-center w-56 pt-5 cursor-pointer"
       onClick={() => (selector.data ? navigate(`/details/${item.id}`) : null)}
       role="presentation"
     >
@@ -15,7 +15,7 @@ const ItemCard = ({ item }) => {
         <div className="bg-orange-200 relative flex justify-center items-center w-28 h-28 rounded-full">
           <img
             src={item.photo}
-            className="object-contain h-64 w-64 absolute right-5 top-[-55px]"
+            className="object-contain h-64 w-64 absolute "
             alt="cover"
           />
         </div>
