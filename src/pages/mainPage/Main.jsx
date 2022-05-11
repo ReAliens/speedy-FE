@@ -20,7 +20,7 @@ const MainPage = () => {
       <div>
         <Carousel
           slidesToShow={3}
-          slidesToScroll={items.length / 3}
+          slidesToScroll={3}
           renderCenterRightControls={({ nextSlide }) => (
             <button
               onClick={nextSlide}
