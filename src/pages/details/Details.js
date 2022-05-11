@@ -12,7 +12,7 @@ const Details = () => {
     dispatch(getItems());
   }, []);
 
-  const item = items.find((item) => item.id.toString() === itemId);
+  const item = items?.find((item) => item.id.toString() === itemId);
 
   return (
 

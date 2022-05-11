@@ -19,7 +19,7 @@ const Login = () => {
   };
 
   return (
-    <div className="w-full h-full p-50 flex justify-center items-center bg-orange-400">
+    <div className="w-full h-full flex justify-center items-center bg-orange-400">
       <form onSubmit={handleSubmit(submit)} className="flex flex-col w-[50vw]">
         <p>Email</p>
         <input
