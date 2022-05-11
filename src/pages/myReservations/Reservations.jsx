@@ -15,7 +15,7 @@ const Reservations = () => {
     dispatch(getReservations());
   }, []);
   return (
-    <div className="grid grid-flow-row justify-center items-center h-[80vh]">
+    <div className="grid grid-flow-row justify-center items-center gap-6 h-[95vh] overflow-auto">
       {userReservations?.map((item) => (
         <ReservationCard key={item.id} reservationData={item} carData={items} />
       ))}

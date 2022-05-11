@@ -5,13 +5,17 @@ import { combineReducers } from 'redux';
 import logger from 'redux-logger';
 import thunk from 'redux-thunk';
 import authReducer from './auth/authReducer';
-import { itemsReducer, singleItemReducer, addNewItemReducer } from './items/itemsReducer';
+import {
+  itemsReducer,
+  singleItemReducer,
+  addNewItemReducer,
+} from './items/itemsReducer';
 import reservationsReducer from './reserveds/reserveReducer';
 
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ['auth'],
+  whitelist: ['auth', 'items'],
 };
 
 const rootReducer = combineReducers({
