@@ -23,61 +23,61 @@ const AddCar = () => {
   return (
     <main>
       <section className="flex justify-center">
-        <div className="font-medium bg-violet-50 mt-24 flex justify-center p-24">
+        <div className="bg-slate-100 mt-24 border-2 border-green-900">
           <form onSubmit={handleSubmit(onSubmit)}>
-            <h2 className="underline underline-offset-8 decoration-fuchsia-700 decoration-double mt-8 mb-16 text-3xl">
+            <h2 className="text-slate-50 font-bold font-serif flex justify-center mb-8 text-xl py-2 bg-green-700 w-full md:h-16 md:text-3xl">
               Add Car to Our Collection
             </h2>
-            <h5 className="text-xl text-fuchsia-700 mt-10">Brand</h5>
+            <div class="text-xs font-normal px-10 mb-10 md:px-20 sm:text-base lg:text-lg">
+            <h5 className="text-fuchsia-700">Brand</h5>
             <input
               {...register('name', { required: true })}
               type="text"
-              className="h-10 w-72 border-2 mt-1 "
+              className="p-2 md:p-4  h-7 w-60 border-2 md:w-auto"
               placeholder="eg: Porsche"
             />
             <p className="text-red-500 mb-6">
               {errors.name && 'this field is required'}
             </p>
-            <h5 className="text-xl text-fuchsia-700">spic</h5>
+            <h5 className="text-fuchsia-700">Model</h5>
             <input
               {...register('specs', { required: true })}
               type="text"
-              className="h-10 w-72 border-2 mt-1"
+              className="p-2 md:p-4 h-7 w-60 border-2 md:w-auto"
               placeholder="eg: 718 Boxster"
             />
             <p className="text-red-500 mb-6">
               {errors.specs && 'this field is required'}
             </p>
-            <h5 className="text-xl text-fuchsia-700">Price</h5>
+            <h5 className="text-fuchsia-700">Price</h5>
             <input
               {...register('price', { required: true })}
               type="text"
-              className="h-10 w-72 border-2 mt-1 "
+              className="p-2 md:p-4 h-7 w-60 border-2 md:w-auto"
               placeholder="eg: $62,600"
             />
             <p className="text-red-500 mb-6">
               {errors.price && 'this field is required'}
             </p>
-            <h5 className="text-xl text-fuchsia-700">photo</h5>
+            <h5 className="text-fuchsia-700">Image</h5>
             <input
               {...register('photo', { required: true })}
               type="text"
-              className="h-10 w-72 border-2 mt-1 "
+              className="p-2 md:p-4 h-7 w-60 border-2 md:w-auto"
               placeholder="Image URL"
             />
 
             <p className="text-red-500 mb-6">
               {errors.image && 'this field is required'}
             </p>
-
-            <h5 className="text-xl text-fuchsia-700">description</h5>
-            <input
+            <h5 className="text-fuchsia-700">Description</h5>
+            <textarea
               {...register('description', { required: true })}
               type="text"
-              className="h-10 w-72 border-2 mt-1"
+              className="p-2 md:p-4 h-24 w-60 border-2 md:w-72 md:h-32"
               placeholder="Car Description"
             />
-            <p className="text-red-500 mb-6">
+            <p className="text-red-500">
               {errors.description && 'this field is required'}
             </p>
             <input
@@ -89,8 +89,9 @@ const AddCar = () => {
 
             <input
               type="submit"
-              className="text-2xl font-bold text-fuchsia-700 border-fuchsia-700 p-2 w- border-4 mt-8 w-72 cursor-pointer"
+              className="bg-green-50 rounded uppercase font-serif font-bold text-fuchsia-700 border-green-700 py-1 px-6 border-2 cursor-pointer md:ml-14 md:py-1 md:w-36 md:text-base md:bg-green-700 md:text-white md:font-semi-bold md:border-green-900 md:rounded-full"
             />
+            </div>
           </form>
         </div>
       </section>
