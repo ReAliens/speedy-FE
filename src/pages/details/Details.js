@@ -7,6 +7,7 @@ const Details = () => {
   const { itemId } = useParams();
   const dispatch = useDispatch();
   const item = useSelector((state) => state.singleItem.items);
+  console.log(item)
 
   useEffect(() => {
     dispatch(getSingleItem(itemId));
