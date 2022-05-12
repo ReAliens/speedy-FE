@@ -102,7 +102,7 @@ const Sidebar = ({ isOpen }) => {
               </li>
             </>
           )}
-          <ul className="flex">
+          <ul className="social-media-list">
             <li className="social-media">
               <img src="./images/facebook.svg" alt="facebook" />
             </li>
