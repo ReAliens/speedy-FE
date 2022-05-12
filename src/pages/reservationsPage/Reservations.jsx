@@ -4,9 +4,7 @@ import { useForm } from 'react-hook-form';
 const Reservations = () => {
   const { handleSubmit, register } = useForm();
 
-  const submit = async (data) => {
-    console.log(data);
-  };
+  const submit = (data) => {};
 
   return (
     <main>

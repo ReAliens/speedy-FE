@@ -22,8 +22,9 @@ const Signup = () => {
   };
 
   return (
-    <div className="w-full h-full flex justify-center items-center bg-orange-400">
-      <ToastContainer autoClose={5000} />
+    <div className="w-full h-full flex flex-col justify-center items-center bg-orange-400">
+      <ToastContainer autoClose={3000} />
+      <h1 className='text-6xl mb-4 text-white'>Sign Up</h1>
       <form
         onSubmit={handleSubmit(submit)}
         className="flex flex-col w-[80vw] md:w-[50vw] bg-white shadow-md rounded px-4 pt-6 pb-8 mb-4"

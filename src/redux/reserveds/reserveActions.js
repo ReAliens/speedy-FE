@@ -10,6 +10,7 @@ import {
   RESERVATIONS_DELETE_FETCH_SUCCESS,
   RESERVATIONS_DELETE_FETCH_FAILURE,
 } from '../constants';
+import { toast } from 'react-toastify';
 
 const baseurl = 'http://localhost:3000/api/v1';
 
@@ -54,7 +55,6 @@ export const removeReservationFailure = (payload) => ({
 
 export const addReservation = (data, user) => async (dispatch) => {
   dispatch(addReservationRequest());
-  console.log(data);
   axios
     .post(`${baseurl}/items/${data.item}/reserveds`, {
       reserved: {
@@ -68,10 +68,12 @@ export const addReservation = (data, user) => async (dispatch) => {
     })
     .then((res) => {
       const reservation = res.data;
+      toast.success('Reservation Added Successgully');
       dispatch(addReservationSuccess(reservation));
     })
     .catch((err) => {
       const { error } = err.response.data;
+      toast.error(error);
       dispatch(addReservationFailure(error));
     });
 };
@@ -96,10 +98,12 @@ export const removeReservation = (item_id, id) => (dispatch) => {
     .delete(`${baseurl}/items/${item_id}/reserveds/${id}`)
     .then((res) => {
       const deleted = res.data;
+      toast.success('Reservation deleted Successgully');
       dispatch(removeReservationSuccess(deleted));
     })
     .catch((err) => {
       const { error } = err.response.data;
+      toast.error(error);
       dispatch(removeReservationFailure(error));
     });
 };

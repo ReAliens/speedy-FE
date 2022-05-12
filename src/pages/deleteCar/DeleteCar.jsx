@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { getItems, deleteItem } from '../../redux/items/itemsActions';
 import { useDispatch } from 'react-redux';
+import { ToastContainer } from 'react-toastify';
 
 const DeleteCar = () => {
   const dispatch = useDispatch();
@@ -9,8 +10,6 @@ const DeleteCar = () => {
   const userId = useSelector((state) => state.auth.data.id);
 
   const carsBelongingToUser = cars.filter((car) => car.user_id === userId);
-
-  console.log(carsBelongingToUser);
 
   const DeleteCarOnClick = (id) => {
     dispatch(deleteItem(id));
@@ -23,6 +22,7 @@ const DeleteCar = () => {
 
   return (
     <div className=" grid grid-flow-row justify-center items-center h-[80vh]">
+      <ToastContainer autoClose={3000} />
       {carsBelongingToUser.map((car) => (
         <div key={car.id}>
           <div className="grid grid-cols-3 w-[90vw] h-[20vh] p-5 items-center bg-green-500 rounded-xl text-white font-bold">
@@ -33,7 +33,6 @@ const DeleteCar = () => {
               <div className="flex flex-col gap-9">
                 <p>{car.name}</p>
                 <p>{car.description}</p>
-                {/* <p> {car.price} </p> */}
               </div>
               <div className="flex flex-col gap-9 ">
                 <p> {car.price} $</p>

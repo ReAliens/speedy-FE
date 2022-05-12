@@ -13,6 +13,7 @@ import {
   Delete_ITEM_SUCCESS,
   Delete_ITEM_FAILURE,
 } from '../constants';
+import { toast } from 'react-toastify';
 
 const baseurl = 'http://localhost:3000/api/v1/items';
 
@@ -90,10 +91,12 @@ export const addNewItem = (item) => async (dispatch) => {
     .post(baseurl, item)
     .then((res) => {
       const item = res.data;
+      toast.success('Car Added Successgully');
       dispatch(addNewItemSuccess(item));
     })
     .catch((err) => {
       const { error } = err.response.data;
+      toast.error('Something went wrong');
       dispatch(addNewItemFailure(error));
     });
 };
@@ -112,17 +115,18 @@ export const deleteItemFailure = (error) => ({
   error,
 });
 
-
 export const deleteItem = (itemId) => async (dispatch) => {
   dispatch(deleteItemRequest());
   axios
     .delete(`${baseurl}/${itemId}`)
     .then((res) => {
       const item = res.data;
+      toast.success('Car deleted Successgully');
       dispatch(deleteItemSuccess(item));
     })
     .catch((err) => {
       const { error } = err.response.data;
+      toast.error(error);
       dispatch(deleteItemFailure(error));
     });
-}
+};

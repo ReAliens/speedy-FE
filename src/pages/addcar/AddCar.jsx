@@ -2,6 +2,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
 import { addNewItem } from '../../redux/items/itemsActions';
+import { ToastContainer } from 'react-toastify';
 
 const AddCar = () => {
   const {
@@ -15,13 +16,13 @@ const AddCar = () => {
   const currentUser = useSelector((state) => state);
 
   const onSubmit = (data) => {
-    console.log(data);
     dispatch(addNewItem(data));
     reset();
   };
 
   return (
     <main className="flex justify-center items-center w-full h-[95vh]">
+      <ToastContainer autoClose={3000} />
       <section className="flex w-[90%] md:px-28">
         <div className="bg-slate-100 border-2 border-green-900 w-full">
           <form onSubmit={handleSubmit(onSubmit)}>

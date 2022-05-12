@@ -14,7 +14,6 @@ const ReservationForm = ({ submit, carName }) => {
   const selectedItem = useMemo(() => {
     return item_id ? items.find((item) => item.id.toString() === item_id) : '';
   }, []);
-  console.log(selectedItem);
   return (
     <div>
       <form onSubmit={handleSubmit(submit)}>
