@@ -7,14 +7,13 @@ const Details = () => {
   const { itemId } = useParams();
   const dispatch = useDispatch();
   const item = useSelector((state) => state.singleItem.items);
-  console.log(item);
 
   useEffect(() => {
     dispatch(getSingleItem(itemId));
   }, []);
 
   return (
-    <div className="max-w-md mx-auto overflow-hidden md:max-w-4xl">
+    <div className="flex flex-col justify-center items-center max-w-md mx-auto overflow-hidden md:max-w-4xl">
       <div className="md:flex pt-16">
         <div className="md:shrink-2">
           <img
@@ -42,24 +41,21 @@ const Details = () => {
               </td>
             </tr>
           </table>
-          <h6 className="font-bold mt-4 text-right">Discover More Models</h6>
-          <Link
-            to={`/reservations/${itemId}/add-reservation`}
-            className="bg-lime-500 rounded-full w-44 h-14 text-neutral-50 flex p-4"
-          >
-            <img src="../reserve.png" alt="reserve " className="h-8" />
-            <span className="text-lg ">Reservation</span>
-          </Link>
+          <div className="flex flex-col justify-center items-center">
+            <Link to="/">
+              <h6 className="font-bold mt-4 text-right">
+                Discover More Models
+              </h6>
+            </Link>
+            <Link
+              to={`/reservations/${itemId}/add-reservation`}
+              className="bg-lime-500 rounded-full w-44 h-14 text-neutral-50 flex p-4"
+            >
+              <img src="../reserve.png" alt="reserve " className="h-8" />
+              <span className="text-lg ">Reservation</span>
+            </Link>
+          </div>
         </div>
-      </div>
-      <div className="bg-lime-500 rounded-r-full w-12">
-        <Link to="/home">
-          <img
-            src="../images/back2.png"
-            alt="back"
-            className="w-12 cursor-pointer pr-2"
-          />  
-        </Link>
       </div>
     </div>
   );
