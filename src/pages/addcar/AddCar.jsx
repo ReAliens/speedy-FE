@@ -34,7 +34,7 @@ const AddCar = () => {
               <input
                 {...register('name', { required: true })}
                 type="text"
-                className="p-2 md:p-4  h-7 w-full border-2"
+                className="p-2 md:p-4 h-7 w-full border-2"
                 placeholder="eg: Porsche"
               />
               <p className="text-red-500 mb-6">

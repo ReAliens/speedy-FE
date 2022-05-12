@@ -82,13 +82,19 @@ const MainPage = () => {
     <div className="flex flex-col justify-center items-center h-full w-[90vw]">
       <h1 className="font-bold text-center w-full text-5xl">Latest Models</h1>
       <p className="text-center text-xs">Please Select your favourite model</p>
-      <div className="w-[80vw] text-center ml-20 mt-32">
-        <Slider {...settings}>
-          {items?.map((item) => (
-            <ItemCard key={item.id} item={item} />
-          ))}
-        </Slider>
-      </div>
+      {items.length > 0 ? (
+        <div className="w-[80vw] text-center ml-20 mt-32">
+          <Slider {...settings}>
+            {items?.map((item) => (
+              <ItemCard key={item.id} item={item} />
+            ))}
+          </Slider>
+        </div>
+      ) : (
+        <div className='p-20'>
+          <p>No cars added by users yet </p>
+        </div>
+      )}
     </div>
   );
 };
