@@ -16,9 +16,17 @@ const Reservations = () => {
   }, []);
   return (
     <div className="grid grid-flow-row justify-center items-center gap-6 h-[95vh] overflow-auto">
-      {userReservations?.map((item) => (
-        <ReservationCard key={item.id} reservationData={item} carData={items} />
-      ))}
+      {userReservations?.length > 0 ? (
+        userReservations?.map((item) => (
+          <ReservationCard
+            key={item.id}
+            reservationData={item}
+            carData={items}
+          />
+        ))
+      ) : (
+        <p>No Reservation added yet</p>
+      )}
     </div>
   );
 };

@@ -34,6 +34,7 @@ const authReducer = (state = initialState, action) => {
         ...state,
         loading: false,
         data: action.payload,
+        error: undefined,
       };
     case LOGIN_START:
       return {
@@ -51,6 +52,7 @@ const authReducer = (state = initialState, action) => {
         ...state,
         loading: false,
         data: action.payload,
+        error: undefined,
       };
     case LOGOUT_START:
       return {
@@ -68,6 +70,7 @@ const authReducer = (state = initialState, action) => {
         ...state,
         loading: false,
         data: null,
+        error: undefined,
       };
     default:
       return state;

@@ -5,6 +5,7 @@ import Sidebar from './components/SideBar/Sidebar';
 import AppRoutes from './routes/routes';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
   const [isOpen, setIsOpen] = useState(false);
