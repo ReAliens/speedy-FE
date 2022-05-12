@@ -1,70 +1,116 @@
-# Getting Started with Create React App
+# Speedy
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Speedy is a mobile-web app that making user trades with his car by renting it after adding some information about it or users can rent cars to make a trip if they like 
+to add some entertainment to their family and trips
 
-## Available Scripts
+# Built With
 
-In the project directory, you can run:
+- React
 
-### `npm start`
+- TailwindCss
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Redux
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- git
 
-### `npm test`
+# Getting Started
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To get a local copy up and running follow these simple example steps.
 
-### `npm run build`
+Clone the project by using terminal:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+git clone git@github.com:ReAliens/speedy-FE.git
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+cd speedy-FE
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Development
 
-### `npm run eject`
+- Create database and run migrations using from Back-end repo
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```
+git clone git@github.com:ReAliens/Speedy.git
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+bin/rails db:setup
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Start the server using
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```
+  bin/rails s
+```
 
-## Learn More
+- To run test 
+```
+rspec spec
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Front-end Repo
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+git clone git@github.com:ReAliens/speedy-FE.git
 
-### Code Splitting
+```
+now in front-end create .env.local file in your root directory and write the following inside it
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```
+PORT=3001
+```
+now run the following commands
 
-### Analyzing the Bundle Size
+```
+npm install
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```
+npm start
+```
 
-### Making a Progressive Web App
+# Prerequisites
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- Ruby 
+- Rails
 
-### Advanced Configuration
+# Author
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+👤 **Ahmed**
+* GitHub: [github](https://github.com/ReAliens)
+* LinkedIn: [linkedin](https://www.linkedin.com/in/armali/)
 
-### Deployment
+👤 **Mucyo**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- GitHub: [github](https://github.com/mucyosoda)
+- LinkedIn: [linkedin](https://www.linkedin.com/in/mucyoclaude)
 
-### `npm run build` fails to minify
+👤 **Mahbub**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- GitHub: [github](https://github.com/mahbubul14)
+- LinkedIn: [linkedin](https://www.linkedin.com/in/mahbubul14/)
+
+👤 **Yahya**
+
+- GitHub: [linkedin](https://www.linkedin.com/in/yahya-el-ganayni-a456115b/)
+- LinkedIn: [github](https://github.com/yahyaelganyni1)
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- A special thanks to Microverse team
+- A special thanks to all our peers.
+- A special thanks to Gregoire Vella on Behance.
+
+
+## 📝 License
+
+This project is [MIT](./MIT.md) licensed.
