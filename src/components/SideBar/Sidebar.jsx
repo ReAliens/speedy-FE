@@ -95,7 +95,7 @@ const Sidebar = ({ isOpen }) => {
                 <button
                   type="button"
                   onClick={() => logout()}
-                  className="side-bar-link "
+                  className="side-bar-link logout"
                 >
                   Log out
                 </button>
@@ -103,14 +103,14 @@ const Sidebar = ({ isOpen }) => {
             </>
           )}
           <ul className="flex">
-            <li>
-              <img src="./images/facebook.svg" alt="" width="40%" />
+            <li className="social-media">
+              <img src="./images/facebook.svg" alt="facebook" />
             </li>
-            <li>
-              <img src="./images/twitter.svg" alt="" width="40%" />
+            <li className="social-media">
+              <img src="./images/twitter.svg" alt="twitter" />
             </li>
-            <li>
-              <img src="./images/instagram.svg" alt="" width="40%" />
+            <li className="social-media">
+              <img src="./images/instagram.svg" alt="instagram" />
             </li>
           </ul>
         </ul>

@@ -16,3 +16,26 @@
     color: #fff;
 }
 
+.social-media {
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #c7c7c7;
+    width: 28%;
+}
+
+.social-media:hover {
+    background-color: #f7923d;
+    color: #fff;
+    border-radius: 20%;
+    cursor: pointer;
+}
+
+.logout {
+    padding: 10px;
+    color: #000;
+    font-size: .88em;
+    font-weight: bold;
+    border-radius: 10%;
+
+}
