@@ -9,6 +9,7 @@ import Login from '../pages/login/Login';
 import Signup from '../pages/signup/Signup';
 import ReserveItem from '../pages/ReserveItem/ReserveItem';
 import Reservations from '../pages/myReservations/Reservations';
+import DeleteCar from '../pages/deleteCar/DeleteCar';
 
 const AppRoutes = () => {
   const selector = useSelector((state) => state.auth);
@@ -20,6 +21,7 @@ const AppRoutes = () => {
             <Route path="/" element={<MainPage />} />
             <Route path="/details/:itemId" element={<Details />} />
             <Route path="/add-car" element={<AddCar />} />
+            <Route path="/delete-car" element={<DeleteCar />} />
             <Route path="/add-reservation" element={<ReserveItem />} />
             <Route path="/reservations" element={<Reservations />} />
           </>
