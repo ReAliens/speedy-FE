@@ -15,7 +15,7 @@ const ReservationCard = ({ reservationData, carData }) => {
     dispatch(getReservations());
   };
   return (
-    <div className="container border-2  w-2/3 border-gray-300 rounded-xl bg-orange-100 lg:ml-64">
+    <div className="container border-2 border-gray-300 rounded-xl bg-orange-100 px-6">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
         <div className="flex justify-center text-12 border-2 border-gray-300 rounded-xl bg-gray-100 md:grid row-span-4">
           <img

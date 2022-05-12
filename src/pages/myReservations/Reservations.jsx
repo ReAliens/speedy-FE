@@ -15,7 +15,9 @@ const Reservations = () => {
     dispatch(getReservations());
   }, []);
   return (
-    <div className="grid grid-flow-row justify-center items-center gap-6 h-[95vh] overflow-auto">
+    <div className="grid grid-flow-row justify-center items-center gap-6 h-[100vh] overflow-auto p-20">
+      <h1 className="text-6xl text-center">My Reserved Cars</h1>
+
       {userReservations?.length > 0 ? (
         userReservations?.map((item) => (
           <ReservationCard
