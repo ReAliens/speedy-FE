@@ -13,10 +13,11 @@ import DeleteCar from '../pages/deleteCar/DeleteCar';
 
 const AppRoutes = () => {
   const selector = useSelector((state) => state.auth);
+  const token = localStorage.getItem('token');
   return (
     <Suspense>
       <Routes>
-        {selector.data ? (
+        {selector.data && token ? (
           <>
             <Route path="/" element={<MainPage />} />
             <Route path="/details/:itemId" element={<Details />} />

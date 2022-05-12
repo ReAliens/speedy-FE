@@ -53,7 +53,7 @@ const Details = () => {
         </div>
       </div>
       <div className="bg-lime-500 rounded-r-full w-12">
-        <Link to="/home">
+        <Link to="/">
           <img
             src="../images/back2.png"
             alt="back"

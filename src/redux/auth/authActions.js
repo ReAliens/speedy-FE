@@ -9,6 +9,7 @@ import {
   LOGOUT_FAILURE,
   LOGOUT_DONE,
 } from '../constants';
+import { toast } from 'react-toastify';
 
 const baseUrl = 'http://localhost:3000';
 
@@ -21,9 +22,8 @@ export const signupFailure = (payload) => ({
   payload,
 });
 
-export const signupDone = (payload) => ({
+export const signupDone = () => ({
   type: SIGNUP_DONE,
-  payload,
 });
 
 export const loginStart = () => ({
@@ -68,13 +68,18 @@ export const signupAction = (data) => (dispatch) => {
     .then((res) => {
       if (res.ok) {
         localStorage.setItem('token', res.headers.get('Authorization'));
-        dispatch(signupDone(res));
+        toast.success('signed up Successfully please login');
+        dispatch(signupDone());
         return res.json();
       }
-      throw new Error(res);
+      return res.text().then((text) => Promise.reject(text));
     })
     .then((json) => json)
-    .catch((err) => dispatch(signupFailure(err)));
+    .catch((err) => {
+      const status = JSON.parse(err);
+      toast.error(status.status.message);
+      dispatch(signupFailure(status.status.message));
+    });
 };
 
 export const loginAction = (data) => (dispatch) => {
@@ -95,8 +100,14 @@ export const loginAction = (data) => (dispatch) => {
       }
       return res.text().then((text) => Promise.reject(text));
     })
-    .then((json) => dispatch(loginDone(json.data)))
-    .catch((err) => dispatch(loginFailure(err)));
+    .then((json) => {
+      toast.success('Logged in Successfully');
+      dispatch(loginDone(json.data));
+    })
+    .catch((err) => {
+      toast.error(err);
+      dispatch(loginFailure(err));
+    });
 };
 
 export const logoutAction = () => (dispatch) => {
@@ -111,11 +122,15 @@ export const logoutAction = () => (dispatch) => {
     .then((res) => {
       if (res.ok) {
         localStorage.removeItem('token');
+        toast.success('logged out in Successfully');
         dispatch(logoutDone());
         return res.json();
       }
       return res.json().then((json) => Promise.reject(json));
     })
     .then((json) => json)
-    .catch((err) => dispatch(logoutFailure(err)));
+    .catch((err) => {
+      toast.error(err);
+      dispatch(logoutFailure(err));
+    });
 };
