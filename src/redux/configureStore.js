@@ -11,7 +11,7 @@ import reservationsReducer from './reserveds/reserveReducer';
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ['auth'],
+  whitelist: ['auth','items'],
 };
 
 const rootReducer = combineReducers({

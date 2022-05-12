@@ -3,6 +3,8 @@ import { BrowserRouter } from 'react-router-dom';
 import Header from './components/header/Header';
 import Sidebar from './components/SideBar/Sidebar';
 import AppRoutes from './routes/routes';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 const App = () => {
   const [isOpen, setIsOpen] = useState(false);

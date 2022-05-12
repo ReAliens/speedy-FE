@@ -19,8 +19,8 @@ const Signup = () => {
   };
 
   return (
-    <div className="w-full h-full p-50 flex justify-center items-center bg-orange-400">
-      <form onSubmit={handleSubmit(submit)} className="flex flex-col w-[50vw] bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+    <div className="w-full h-full flex justify-center items-center bg-orange-400">
+      <form onSubmit={handleSubmit(submit)} className="flex flex-col w-[80vw] md:w-[50vw] bg-white shadow-md rounded px-4 pt-6 pb-8 mb-4">
         <span className="mt-5 mb-2">Email</span>
         <input
           type="email"
