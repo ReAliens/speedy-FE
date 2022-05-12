@@ -1,0 +1,74 @@
+/* stylelint-disable */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* stylelint-enable */
+
+body {
+  margin: 0;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    'Roboto',
+    'Oxygen',
+    'Ubuntu',
+    'Cantarell',
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family:
+    source-code-pro,
+    Menlo,
+    Monaco,
+    Consolas,
+    'Courier New',
+    monospace;
+}
+
+/* .car {
+  width: 200px;
+  height: 100px;
+  background: url(../public/Black-Car.svg);
+  left: 140px;
+  position: absolute;
+  background-repeat: no-repeat;
+}
+
+.car::after {
+  content: '';
+  height: 35px;
+  width: 36px;
+  background: url(../public/wheel.svg);
+  position: absolute;
+  top: 40px;
+  left: 14px;
+  animation: rotateWheel 0.2s infinite linear;
+}
+
+.car::before {
+  content: '';
+  height: 35px;
+  width: 36px;
+  background: url(../public/wheel.svg);
+  position: absolute;
+  top: 40px;
+  left: 142px;
+  animation: rotateWheel 0.2s infinite linear;
+}
+
+@keyframes rotateWheel {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+} */
