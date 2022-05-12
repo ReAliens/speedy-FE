@@ -23,32 +23,38 @@ const DeleteCar = () => {
   return (
     <div className=" grid grid-flow-row justify-center items-center h-[80vh]">
       <ToastContainer autoClose={3000} />
+
+      <h1 className='text-6xl text-center'>My Cars List</h1>
       {carsBelongingToUser.length > 0 ? (
         carsBelongingToUser.map((car) => (
-          <div key={car.id}>
-            <div className="grid grid-cols-3 w-[90vw] h-[20vh] p-5 items-center bg-green-500 rounded-xl text-white font-bold">
-              <div className="w-full h-full object-contain">
-                <img src={car.photo} className="object-contain w-1/2 h-full" />
-              </div>
-              <div className="flex justify-between">
-                <div className="flex flex-col gap-9">
-                  <p>{car.name}</p>
-                  <p>{car.description}</p>
+          <div key={car.id} className="flex justify-center " >
+            <div class="container border-2  w-2/3 border-gray-300 rounded-xl bg-orange-100">
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+                <div class="flex justify-center text-12 border-2 border-gray-300 rounded-xl bg-gray-100 md:grid row-span-4">
+                  <img src={car.photo} className="object-contain h-full" />
                 </div>
-                <div className="flex flex-col gap-9 ">
-                  <p> {car.price} $</p>
+                <div class="flex justify-center lg:pt-8">
+                  <div className="w-full text-center">
+                    <div className="w-full text-4xl">{car.name}</div>
+                    <div> {car.description} </div>
+                  </div>
                 </div>
-              </div>
-              <button
-                onClick={() => {
-                  DeleteCarOnClick(car.id);
-                }}
-                className="bg-red-500 hover:bg-red-700
+                <div class="flex justify-center lg:pt-16">
+                  <p> ${car.price} </p>
+                </div>
+                <div class="flex justify-center ">
+                  <button
+                    onClick={() => {
+                      DeleteCarOnClick(car.id);
+                    }}
+                    className="bg-orange-500 hover:bg-red-700
               text-white font-bold py-2 px-4 rounded
-              focus:outline-none focus:shadow-outline"
-              >
-                Delete
-              </button>
+              focus:outline-none focus:shadow-outline mb-4 lg:h-12 mt-14"
+                  >
+                    Delete
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         ))
