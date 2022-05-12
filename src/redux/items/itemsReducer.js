@@ -8,6 +8,9 @@ import {
   ADD_NEW_ITEM_REQUEST,
   ADD_NEW_ITEM_SUCCESS,
   ADD_NEW_ITEM_FAILURE,
+  Delete_ITEM_REQUEST,
+  Delete_ITEM_SUCCESS,
+  Delete_ITEM_FAILURE,
 } from '../constants';
 
 const initialState = {
@@ -87,3 +90,27 @@ export const addNewItemReducer = (state = initialState, action) => {
       return state;
   }
 };
+
+export const deleteItemReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case Delete_ITEM_REQUEST:
+      return {
+        ...state,
+        isFetching: true,
+      };
+    case Delete_ITEM_SUCCESS:
+      return {
+        ...state,
+        isFetching: false,
+        items: action.item,
+      };
+    case Delete_ITEM_FAILURE:
+      return {
+        ...state,
+        isFetching: false,
+        error: action.error,
+      };
+    default:
+      return state;
+  }
+}
