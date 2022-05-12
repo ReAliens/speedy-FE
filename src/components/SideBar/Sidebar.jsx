@@ -14,11 +14,11 @@ const Sidebar = ({ isOpen }) => {
   };
   return (
     isOpen && (
-      <div className="overflow-y-auto py-4 h-full px-3 bg-gray-50 rounded dark:bg-gray-800 fixed top-0 left-0 pt-16 w-[25vw]">
+      <div className="overflow-y-auto py-4 h-full px-3 bg-gray-50 rounded dark:bg-gray-800 fixed top-0 left-0 pt-16 w-[17vw]">
         <ul className="space-y-2">
           <li>
             <Link
-              to="/home"
+              to={selector.data ? '/' : '/home'}
               className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
             >
               <span className="ml-3">Cars List</span>

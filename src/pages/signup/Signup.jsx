@@ -20,25 +20,25 @@ const Signup = () => {
 
   return (
     <div className="w-full h-full flex justify-center items-center bg-orange-400">
-      <form onSubmit={handleSubmit(submit)} className="flex flex-col w-[50vw]">
-        <span className="mt-5">Email</span>
+      <form onSubmit={handleSubmit(submit)} className="flex flex-col w-[80vw] md:w-[50vw] bg-white shadow-md rounded px-4 pt-6 pb-8 mb-4">
+        <span className="mt-5 mb-2">Email</span>
         <input
           type="email"
           {...register('email', {
             required: true,
             pattern: /^[\w-\\.]+@([\w-]+\.)+[\w-]{2,4}$/,
           })}
-          className="border-2 outline-dashed"
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         />
         <p>{errors.email && 'this field need to be modefied'}</p>
-        <span className="mt-5">Password</span>
+        <span className="mt-5 block text-gray-700 text-sm font-bold mb-2">Password</span>
         <input
           type="password"
           {...register('password', {
             required: true,
             minLength: 8,
           })}
-          className="border-2 outline-dashed"
+          className="shadow appearance-none rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
         />
         <p>{errors.password && 'this field need to be modefied'}</p>
         <button

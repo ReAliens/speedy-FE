@@ -17,7 +17,7 @@ const AppRoutes = () => {
       <Routes>
         {selector.data ? (
           <>
-            <Route path="/home" element={<MainPage />} />
+            <Route path="/" element={<MainPage />} />
             <Route path="/details/:itemId" element={<Details />} />
             <Route path="/add-car" element={<AddCar />} />
             <Route path="/add-reservation" element={<ReserveItem />} />
