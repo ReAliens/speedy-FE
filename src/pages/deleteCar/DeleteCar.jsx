@@ -25,7 +25,6 @@ const DeleteCar = () => {
     <div className=" grid grid-flow-row justify-center items-center h-[80vh]">
       {carsBelongingToUser.map((car) => (
         <div key={car.id}>
-          {/* imbedded */}
           <div class="container border-2  w-2/3 border-gray-300 rounded-xl bg-orange-100 lg:ml-64">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
               <div class="flex justify-center text-12 border-2 border-gray-300 rounded-xl bg-gray-100 md:grid row-span-4">
@@ -35,7 +34,7 @@ const DeleteCar = () => {
                 <div className="w-full text-center">
                 <div className="w-full text-4xl">{car.name}</div>
                 <div> {car.description} </div>
-                </div>
+              </div>
               </div>
               <div class="flex justify-center lg:pt-16">
               <p> ${car.price} </p>
