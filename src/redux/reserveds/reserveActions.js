@@ -6,6 +6,9 @@ import {
   RESERVATIONS_FETCH_FAILURE,
   RESERVATIONS_FETCH_START,
   RESERVATIONS_FETCH_SUCCESS,
+  RESERVATIONS_DELETE_FETCH_START,
+  RESERVATIONS_DELETE_FETCH_SUCCESS,
+  RESERVATIONS_DELETE_FETCH_FAILURE,
 } from '../constants';
 
 const baseurl = 'http://localhost:3000/api/v1';
@@ -33,6 +36,19 @@ export const reservationsSuccess = (payload) => ({
 });
 export const reservationsFailure = (payload) => ({
   type: RESERVATIONS_FETCH_FAILURE,
+  payload,
+});
+
+export const removeReservationRequest = () => ({
+  type: RESERVATIONS_DELETE_FETCH_START,
+});
+
+export const removeReservationSuccess = (payload) => ({
+  type: RESERVATIONS_DELETE_FETCH_SUCCESS,
+  payload,
+});
+export const removeReservationFailure = (payload) => ({
+  type: RESERVATIONS_DELETE_FETCH_FAILURE,
   payload,
 });
 
@@ -71,5 +87,19 @@ export const getReservations = () => async (dispatch) => {
     .catch((err) => {
       const { error } = err.response.data;
       dispatch(reservationsFailure(error));
+    });
+};
+
+export const removeReservation = (item_id, id) => (dispatch) => {
+  dispatch(removeReservationRequest());
+  return axios
+    .delete(`${baseurl}/items/${item_id}/reserveds/${id}`)
+    .then((res) => {
+      const deleted = res.data;
+      dispatch(removeReservationSuccess(deleted));
+    })
+    .catch((err) => {
+      const { error } = err.response.data;
+      dispatch(removeReservationFailure(error));
     });
 };

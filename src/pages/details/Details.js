@@ -43,10 +43,13 @@ const Details = () => {
             </tr>
           </table>
           <h6 className="font-bold mt-4 text-right">Discover More Models</h6>
-          <button type="button" className="bg-lime-500 rounded-full w-44 h-14 text-neutral-50 flex p-4">
+          <Link
+            to={`/reservations/${itemId}/add-reservation`}
+            className="bg-lime-500 rounded-full w-44 h-14 text-neutral-50 flex p-4"
+          >
             <img src="../reserve.png" alt="reserve " className="h-8" />
             <span className="text-lg ">Reservation</span>
-          </button>
+          </Link>
         </div>
       </div>
       <div className="bg-lime-500 rounded-r-full w-12">
@@ -55,7 +58,7 @@ const Details = () => {
             src="../images/back2.png"
             alt="back"
             className="w-12 cursor-pointer pr-2"
-          />
+          />  
         </Link>
       </div>
     </div>
