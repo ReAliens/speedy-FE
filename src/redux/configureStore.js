@@ -9,6 +9,7 @@ import {
   itemsReducer,
   singleItemReducer,
   addNewItemReducer,
+  deleteItemReducer,
 } from './items/itemsReducer';
 import reservationsReducer from './reserveds/reserveReducer';
 
@@ -24,6 +25,7 @@ const rootReducer = combineReducers({
   singleItem: singleItemReducer,
   addNewItem: addNewItemReducer,
   reservations: reservationsReducer,
+  deleteItem: deleteItemReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

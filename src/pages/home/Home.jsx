@@ -6,23 +6,23 @@ const Home = () => (
     <img
       src="/car.png"
       alt="page-cover"
-      className="object-contain w-full h-full"
+      className="object-contain w-full h-full mb-12"
     />
-    <div className="absolute top-[10%] h-[70vh] text-center flex flex-col justify-around items-center py-10">
-      <div className="text-white text-center font-bold text-6xl flex w-full items-center justify-center">
+    <div className="absolute top-[8%] h-[60vh] flex flex-col justify-around items-center py-2 pl-12">
+      <div className="text-white text-center font-bold mt-24 text-6xl flex w-full items-center justify-center">
         <span>Speedy</span>
       </div>
-      <p className="text-white opacity-75 font-bold text-2xl mt-4">
+      <p className="text-white opacity-75 font-bold text-2xl mb-32">
         Pick your favorite car in just one click
       </p>
-      <div className="flex w-full justify-around">
+      <div className="flex w-full justify-around mt-24">
         <Link to="/login">
-          <span className="border-2 border-green-500 rounded-3xl hover:text-green-500 hover:bg-white hover:font-bold py-2 px-10 bg-green-500  text-white">
+          <span className=" rounded-lg hover:text-green-500 hover:bg-white hover:font-bold py-2 px-2 bg-green-500 mr-0 font-bold text-white">
             Log in
           </span>
         </Link>
         <Link to="/signup">
-          <span className="border-2 border-green-500 rounded-3xl hover:text-green-500 hover:bg-white hover:font-bold py-2 px-10 bg-green-500  text-white">
+          <span className="rounded-lg hover:text-green-500 hover:bg-white hover:font-bold  bg-green-500 mr-10 py-2 px-2 font-bold text-white">
             Sign up
           </span>
         </Link>

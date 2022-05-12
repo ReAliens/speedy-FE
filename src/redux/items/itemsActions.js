@@ -9,6 +9,9 @@ import {
   ADD_NEW_ITEM_REQUEST,
   ADD_NEW_ITEM_SUCCESS,
   ADD_NEW_ITEM_FAILURE,
+  Delete_ITEM_REQUEST,
+  Delete_ITEM_SUCCESS,
+  Delete_ITEM_FAILURE,
 } from '../constants';
 
 const baseurl = 'http://localhost:3000/api/v1/items';
@@ -94,3 +97,32 @@ export const addNewItem = (item) => async (dispatch) => {
       dispatch(addNewItemFailure(error));
     });
 };
+
+export const deleteItemRequest = () => ({
+  type: Delete_ITEM_REQUEST,
+});
+
+export const deleteItemSuccess = (item) => ({
+  type: Delete_ITEM_SUCCESS,
+  item,
+});
+
+export const deleteItemFailure = (error) => ({
+  type: Delete_ITEM_FAILURE,
+  error,
+});
+
+
+export const deleteItem = (itemId) => async (dispatch) => {
+  dispatch(deleteItemRequest());
+  axios
+    .delete(`${baseurl}/${itemId}`)
+    .then((res) => {
+      const item = res.data;
+      dispatch(deleteItemSuccess(item));
+    })
+    .catch((err) => {
+      const { error } = err.response.data;
+      dispatch(deleteItemFailure(error));
+    });
+}
